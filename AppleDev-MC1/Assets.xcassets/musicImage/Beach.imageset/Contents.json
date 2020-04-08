@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Rectangle Copy 2.png",
+      "filename" : "Beach.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Rectangle Copy 2@2x.png",
+      "filename" : "Beach@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Rectangle Copy 2@3x.png",
+      "filename" : "Beach@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
