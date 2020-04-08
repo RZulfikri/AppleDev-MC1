@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
+		441B8DEB243DBACF0042BA01 /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE9243DBACF0042BA01 /* SettingsActivityVC.swift */; };
+		441B8DEC243DBACF0042BA01 /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B8DEA243DBACF0042BA01 /* SettingsActivityVC.xib */; };
+		441B8DEF243DBAE70042BA01 /* SettingsAmbienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DED243DBAE70042BA01 /* SettingsAmbienceVC.swift */; };
+		441B8DF0243DBAE70042BA01 /* SettingsAmbienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B8DEE243DBAE70042BA01 /* SettingsAmbienceVC.xib */; };
+		44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A041243DC1F500A87F9A /* AmbienceCell.swift */; };
+		44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8A042243DC1F500A87F9A /* AmbienceCell.xib */; };
+		44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A04A243DC70C00A87F9A /* ActivityList.swift */; };
 		44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E64243C63ED000E450B /* AppDelegate.swift */; };
 		44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E66243C63ED000E450B /* SceneDelegate.swift */; };
 		44FC0E69243C63ED000E450B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E68243C63ED000E450B /* ViewController.swift */; };
@@ -17,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		441B8DE9243DBACF0042BA01 /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
+		441B8DEA243DBACF0042BA01 /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
+		441B8DED243DBAE70042BA01 /* SettingsAmbienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAmbienceVC.swift; sourceTree = "<group>"; };
+		441B8DEE243DBAE70042BA01 /* SettingsAmbienceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAmbienceVC.xib; sourceTree = "<group>"; };
+		44A8A041243DC1F500A87F9A /* AmbienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceCell.swift; sourceTree = "<group>"; };
+		44A8A042243DC1F500A87F9A /* AmbienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmbienceCell.xib; sourceTree = "<group>"; };
+		44A8A04A243DC70C00A87F9A /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
 		44FC0E61243C63ED000E450B /* AppleDev-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleDev-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC0E64243C63ED000E450B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FC0E66243C63ED000E450B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +55,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441B8DE8243DBAB70042BA01 /* SettingsContent */ = {
+			isa = PBXGroup;
+			children = (
+				441B8DE9243DBACF0042BA01 /* SettingsActivityVC.swift */,
+				441B8DEA243DBACF0042BA01 /* SettingsActivityVC.xib */,
+				441B8DED243DBAE70042BA01 /* SettingsAmbienceVC.swift */,
+				441B8DEE243DBAE70042BA01 /* SettingsAmbienceVC.xib */,
+				44A8A041243DC1F500A87F9A /* AmbienceCell.swift */,
+				44A8A042243DC1F500A87F9A /* AmbienceCell.xib */,
+			);
+			path = SettingsContent;
+			sourceTree = "<group>";
+		};
+		44A8A047243DC63800A87F9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		44FC0E58243C63ED000E450B = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +95,8 @@
 		44FC0E63243C63ED000E450B /* AppleDev-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				44A8A047243DC63800A87F9A /* Models */,
+				441B8DE8243DBAB70042BA01 /* SettingsContent */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				44FC0E68243C63ED000E450B /* ViewController.swift */,
@@ -66,6 +105,7 @@
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -128,9 +168,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441B8DF0243DBAE70042BA01 /* SettingsAmbienceVC.xib in Resources */,
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */,
+				441B8DEC243DBACF0042BA01 /* SettingsActivityVC.xib in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
+				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */,
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
+				44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */,
 				44FC0E69243C63ED000E450B /* ViewController.swift in Sources */,
+				441B8DEB243DBACF0042BA01 /* SettingsActivityVC.swift in Sources */,
+				441B8DEF243DBAE70042BA01 /* SettingsAmbienceVC.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
+				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
