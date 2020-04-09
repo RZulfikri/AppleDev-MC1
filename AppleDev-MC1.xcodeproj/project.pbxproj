@@ -212,10 +212,7 @@
 				493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */,
 				28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */,
 				28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */,
-				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
-				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
-				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
@@ -364,12 +361,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9S2322R8WG;
 				INFOPLIST_FILE = "AppleDev-MC1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.rahmatzulfikri.AppleDev-MC1";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.rahmatzulfikri.AppleDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,12 +379,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9S2322R8WG;
 				INFOPLIST_FILE = "AppleDev-MC1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.rahmatzulfikri.AppleDev-MC1";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.rahmatzulfikri.AppleDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
