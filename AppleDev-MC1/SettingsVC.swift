@@ -11,32 +11,40 @@ import UIKit
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var segmentedCtrl: UISegmentedControl!
-    @IBOutlet weak var contentContainer: UIView!
+    @IBOutlet var contentContainer: UIView!
     
-    var settingsActivityVC: UIView!
-    var settingsAmbienceVC: UIView!
+    var settingsActivityVC: UIViewController!
+    var settingsAmbienceVC: UIViewController!
     
-    var currentIndex: Int = 0
+    var currentIndex: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = segmentedCtrl.selectedSegmentIndex
         setupLayoutContent()
-        changeScreenByIndex(index: currentIndex)
     }
     
     func setupLayoutContent() {
-        settingsActivityVC = SettingsActivityVC().view
-        settingsAmbienceVC = SettingsAmbienceVC().view
+        
+        settingsActivityVC = SettingsActivityVC()
+        settingsAmbienceVC = SettingsAmbienceVC()
            
-        settingsActivityVC.frame = contentContainer.bounds
-        settingsActivityVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       print(contentContainer.bounds)
-        settingsAmbienceVC.frame = contentContainer.bounds
-        settingsAmbienceVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       
-        contentContainer.addSubview(settingsActivityVC)
-        contentContainer.addSubview(settingsAmbienceVC)
+//        settingsActivityVC.frame = contentContainer.bounds
+//        settingsActivityVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        settingsAmbienceVC.frame = contentContainer.bounds
+//        settingsAmbienceVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        settingsActivityVC.view.frame = contentContainer.bounds
+        settingsActivityVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        settingsActivityVC.didMove(toParent: self)
+        contentContainer.addSubview(settingsActivityVC.view)
+
+        settingsAmbienceVC.view.frame = contentContainer.bounds
+        settingsAmbienceVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        settingsAmbienceVC.didMove(toParent: self)
+        contentContainer.addSubview(settingsAmbienceVC.view)
+        
+        changeScreenByIndex(index: currentIndex)
     }
     
 
@@ -52,9 +60,9 @@ class SettingsVC: UIViewController {
     
     func changeScreenByIndex(index: Int) {
         if (index == 0) {
-            contentContainer.bringSubviewToFront(settingsActivityVC)
+            contentContainer.bringSubviewToFront(settingsActivityVC.view)
         } else {
-            contentContainer.bringSubviewToFront(settingsAmbienceVC)
+            contentContainer.bringSubviewToFront(settingsAmbienceVC.view)
         }
     }
 

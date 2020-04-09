@@ -24,4 +24,15 @@ class ActivityList {
     func removeActivity(index: Int) {
         arrActivities.remove(at: index)
     }
+    
+    func getList() -> [String] {
+        return arrActivities
+    }
+    
+    func getCount() -> Int {
+        return arrActivities.count
+    }
 }
+
+
+let globalActivities = ActivityList.init(arrActivities: ["Working", "Hobby", "Study", "Sleaping", "Playing Games"])

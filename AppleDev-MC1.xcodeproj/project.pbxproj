@@ -17,6 +17,8 @@
 		44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A041243DC1F500A87F9A /* AmbienceCell.swift */; };
 		44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8A042243DC1F500A87F9A /* AmbienceCell.xib */; };
 		44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A04A243DC70C00A87F9A /* ActivityList.swift */; };
+		44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D22766243F3BFD00A8779B /* ActivityCell.swift */; };
+		44D22769243F3BFD00A8779B /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D22767243F3BFD00A8779B /* ActivityCell.xib */; };
 		44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E64243C63ED000E450B /* AppDelegate.swift */; };
 		44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E66243C63ED000E450B /* SceneDelegate.swift */; };
 		44FC0E69243C63ED000E450B /* SetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E68243C63ED000E450B /* SetTime.swift */; };
@@ -39,6 +41,8 @@
 		44A8A041243DC1F500A87F9A /* AmbienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceCell.swift; sourceTree = "<group>"; };
 		44A8A042243DC1F500A87F9A /* AmbienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmbienceCell.xib; sourceTree = "<group>"; };
 		44A8A04A243DC70C00A87F9A /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
+		44D22766243F3BFD00A8779B /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		44D22767243F3BFD00A8779B /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		44FC0E61243C63ED000E450B /* AppleDev-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleDev-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC0E64243C63ED000E450B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FC0E66243C63ED000E450B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */,
 				44A8A041243DC1F500A87F9A /* AmbienceCell.swift */,
 				44A8A042243DC1F500A87F9A /* AmbienceCell.xib */,
+				44D22766243F3BFD00A8779B /* ActivityCell.swift */,
+				44D22767243F3BFD00A8779B /* ActivityCell.xib */,
 			);
 			path = SettingsContent;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
+				44D22769243F3BFD00A8779B /* ActivityCell.xib in Resources */,
 				45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
+				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
