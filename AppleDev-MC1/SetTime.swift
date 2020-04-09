@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
-class SetTime: UIViewController, UIScrollViewDelegate {
+class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate{
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
     var slides:[Slide] = [];
+    var musicPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,37 @@ class SetTime: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
         view.bringSubviewToFront(pageControl)
+        
+        backgroundMusic(index: 0)
     }
+    
+    func musicPlayer(songTitle: String) {
+        let path = Bundle.main.path(forResource: "\(songTitle).mp3", ofType: nil)
+        let url = URL(fileURLWithPath: path!)
+        
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer?.play()
+        } catch {
+            //Error
+        }
+    }
+    
+    func backgroundMusic(index: Int) {
+        
+        if index == 0 {
+            musicPlayer(songTitle: "Cyberpunk Ambience - Apartment View (loop + music)")
+        } else if index == 1 {
+            musicPlayer(songTitle: "Coffee Shop")
+        } else if index == 2 {
+            musicPlayer(songTitle: "Ocean Waves")
+        } else if index == 3 {
+            musicPlayer(songTitle: "Thuderstorm")
+        } else {
+            musicPlayer(songTitle: "Forest 1")
+        }
+    }
+
     
     func createSlides() -> [Slide] {
 
@@ -67,42 +99,38 @@ class SetTime: UIViewController, UIScrollViewDelegate {
         let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
         let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
             
-        // vertical
+        // Vertical
         let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
         let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
             
         let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
         let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-            
-            
-            /*
-             * below code changes the background color of view on paging the scrollview
-             */
-    //        self.scrollView(scrollView, didScrollToPercentageOffset: percentageHorizontalOffset)
-            
         
-            /*
-             * below code scales the imageview on paging the scrollview
-             */
-            let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
+        //Scales the imageview on paging the scrollview
+        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
             
-            if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+            slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
+            slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
                 
-                slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-                slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
+        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
+            slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
+            slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
                 
-            } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-                slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-                slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
+        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
+            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
+            slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
                 
-            } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-                slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-                slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-                
-            } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-                slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-                slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-            }
+        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
+            slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
+            slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
         }
+        
+        backgroundMusic(index: Int(pageIndex))
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
