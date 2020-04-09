@@ -1,5 +1,5 @@
 //
-//  Congratulation.swift
+//  MusicPlayer.swift
 //  AppleDev-MC1
 //
 //  Created by Andrew Novansky Ignatius on 09/04/20.
@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
-class Congratulation: UIViewController {
+class MusicPlayer: UIViewController {
 
-    @IBOutlet weak var CongratsLabel: UILabel!
-    @IBOutlet weak var BackToFocusButton: RoundButton!
+    var player:AVAudioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        CongratsLabel.text = "You have successfully completed your activity of Working for \(minutes) minutes!"
+
+        do{
+            let audioPath = Bundle.main.path(forResource: "Song", ofType: ".mp3")
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        }
+        catch{
+            //ERROR
+        }
+        
+        player.play()
+        player.numberOfLoops = -1
     }
     
 
