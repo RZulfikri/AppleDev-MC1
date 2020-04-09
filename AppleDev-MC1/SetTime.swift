@@ -136,8 +136,8 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
         backgroundMusic(index: Int(pageIndex))
     }
     
-/*    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-    }*/
+    }
 }
 
