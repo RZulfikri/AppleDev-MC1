@@ -25,6 +25,8 @@
 		44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */; };
 		45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C4A243D96BF002A0BF8 /* Slide.swift */; };
 		45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C4C243D96E1002A0BF8 /* Slide.xib */; };
+		493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528C243EFCEB00860E17 /* SetActivity.swift */; };
+		493C528F243F043900860E17 /* Congratulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528E243F043900860E17 /* Congratulation.swift */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		44FC0E72243C63EF000E450B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E61C4A243D96BF002A0BF8 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		45E61C4C243D96E1002A0BF8 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		493C528C243EFCEB00860E17 /* SetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivity.swift; sourceTree = "<group>"; };
+		493C528E243F043900860E17 /* Congratulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulation.swift; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,8 @@
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
 				28DDAEA7243C6C0B00F6613B /* Haidar.swift */,
 				44FC0E68243C63ED000E450B /* SetTime.swift */,
+				493C528E243F043900860E17 /* Congratulation.swift */,
+				493C528C243EFCEB00860E17 /* SetActivity.swift */,
 				45E61C4A243D96BF002A0BF8 /* Slide.swift */,
 				45E61C4C243D96E1002A0BF8 /* Slide.xib */,
 				44FC0E6A243C63ED000E450B /* Main.storyboard */,
@@ -202,6 +208,8 @@
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
+				493C528F243F043900860E17 /* Congratulation.swift in Sources */,
+				493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */,
 				28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */,
 				28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
