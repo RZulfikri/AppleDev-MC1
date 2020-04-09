@@ -9,19 +9,29 @@
 import UIKit
 import AVFoundation
 
-class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate{
+class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var durationPicker: UIPickerView!
     
-    var slides:[Slide] = [];
+    var slides: [Slide] = []
     var musicPlayer: AVAudioPlayer?
+    var durationModelPicker: DurationModelPicker!
+    var rotationAngle: CGFloat!
+    
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupScrollView()
+        setupPicker()
         
+    }
+    
+    func setupScrollView() {
         scrollView.delegate = self
         
         slides = createSlides()
@@ -34,7 +44,24 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
         backgroundMusic(index: 0)
     }
     
-    func musicPlayer(songTitle: String) {
+    // Setup Duration Picker
+    func setupPicker() {
+        
+        rotationAngle = -90 * (.pi / 180)
+        
+        durationModelPicker = DurationModelPicker()
+        durationModelPicker.modelData = ListOfDurations.getData()
+        
+        let height = durationPicker.frame.origin.y
+        durationPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        durationPicker.frame = CGRect(x: -100, y: height, width: view.frame.width + 200, height: 100)
+
+        durationPicker.delegate = durationModelPicker
+        durationPicker.dataSource = durationModelPicker
+    }
+    
+    // Setup Music Player
+    func setupMusicPlayer(songTitle: String) {
         let path = Bundle.main.path(forResource: "\(songTitle).mp3", ofType: nil)
         let url = URL(fileURLWithPath: path!)
         
@@ -46,29 +73,40 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
         }
     }
     
-    func backgroundMusic(index: Int) {
+    // Setup Side Scroll
+    func setupSlideScrollView(slides : [Slide]) {
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+        scrollView.isPagingEnabled = true
         
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            scrollView.addSubview(slides[i])
+        }
+    }
+    
+    // Music Player
+    func backgroundMusic(index: Int) {
         if index == 0 {
-            musicPlayer(songTitle: "Campfire")
+            setupMusicPlayer(songTitle: "Campfire")
             titleLbl.text = "Campfire"
         } else if index == 1 {
-            musicPlayer(songTitle: "Coffee Shop")
+            setupMusicPlayer(songTitle: "Coffee Shop")
             titleLbl.text = "Coffee Shop"
         } else if index == 2 {
-            musicPlayer(songTitle: "Ocean Waves")
+            setupMusicPlayer(songTitle: "Ocean Waves")
             titleLbl.text = "Ocean Waves"
         } else if index == 3 {
-            musicPlayer(songTitle: "Thuderstorm")
+            setupMusicPlayer(songTitle: "Thuderstorm")
             titleLbl.text = "Thunderstorm"
         } else {
-            musicPlayer(songTitle: "Forest 1")
+            setupMusicPlayer(songTitle: "Forest 1")
             titleLbl.text = "Forest"
         }
     }
 
-    
+    // Image Carousel Content
     func createSlides() -> [Slide] {
-
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageView.image = UIImage(named: "toa-heftiba-DUXACn8tgp4-unsplash")
         
@@ -84,21 +122,10 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
         let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide5.imageView.image = UIImage(named: "deglee-degi-wQImoykAwGs-unsplash")
         
-        
         return [slide1, slide2, slide3, slide4, slide5]
     }
     
-    func setupSlideScrollView(slides : [Slide]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
-        scrollView.isPagingEnabled = true
-        
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
-            scrollView.addSubview(slides[i])
-        }
-    }
-    
+    // Connect Music to background & Slide
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)

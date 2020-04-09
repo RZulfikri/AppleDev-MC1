@@ -20,6 +20,9 @@
 		45E61C59243F01C9002A0BF8 /* Ocean Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C58243F01C9002A0BF8 /* Ocean Waves.mp3 */; };
 		45E61C5B243F01D4002A0BF8 /* Thuderstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C5A243F01D4002A0BF8 /* Thuderstorm.mp3 */; };
 		45E61C5D243F1B55002A0BF8 /* Campfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C5C243F1B55002A0BF8 /* Campfire.mp3 */; };
+		45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */; };
+		45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */; };
+		45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6D243F3802002A0BF8 /* DataModel.swift */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		45E61C58243F01C9002A0BF8 /* Ocean Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ocean Waves.mp3"; path = "../../15 Free Ambient Sound Effects/Ocean Waves.mp3"; sourceTree = "<group>"; };
 		45E61C5A243F01D4002A0BF8 /* Thuderstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Thuderstorm.mp3; path = "../../15 Free Ambient Sound Effects/Thuderstorm.mp3"; sourceTree = "<group>"; };
 		45E61C5C243F1B55002A0BF8 /* Campfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Campfire.mp3; path = "../../15 Free Ambient Sound Effects/Campfire.mp3"; sourceTree = "<group>"; };
+		45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModelPicker.swift; sourceTree = "<group>"; };
+		45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfDurations.swift; sourceTree = "<group>"; };
+		45E61C6D243F3802002A0BF8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,18 +81,21 @@
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				44FC0E68243C63ED000E450B /* SetTime.swift */,
+				45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */,
+				45E61C6D243F3802002A0BF8 /* DataModel.swift */,
+				45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */,
 				45E61C4A243D96BF002A0BF8 /* Slide.swift */,
 				45E61C4C243D96E1002A0BF8 /* Slide.xib */,
 				44FC0E6A243C63ED000E450B /* Main.storyboard */,
 				4984E60A243C79E800EB2B8C /* RoundButton.swift */,
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
-				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
 				45E61C5C243F1B55002A0BF8 /* Campfire.mp3 */,
 				45E61C54243F01B1002A0BF8 /* Coffee Shop.mp3 */,
 				45E61C58243F01C9002A0BF8 /* Ocean Waves.mp3 */,
 				45E61C5A243F01D4002A0BF8 /* Thuderstorm.mp3 */,
 				45E61C56243F01C0002A0BF8 /* Forest 1.mp3 */,
+				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -171,7 +180,10 @@
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
+				45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
+				45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */,
+				45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */,
 				45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
