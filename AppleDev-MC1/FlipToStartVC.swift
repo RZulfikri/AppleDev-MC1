@@ -14,14 +14,28 @@ class FlipToStartVC: UIViewController {
     @IBOutlet weak var timeLeftLbl: UILabel!
     
     var motion = CMMotionManager()
-    var timer:Timer!
+    var timer = Timer()
     var stats = ""
+    var timeRemaining = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myAccelerometer()
-        
+        timerStartAct()
         // Do any additional setup after loading the view.
+    }
+    
+    func timerStartAct(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showTime), userInfo: nil, repeats: true)
+    }
+    
+    func timerPauseAct(){
+        timer.invalidate()
+    }
+    
+    @objc func showTime(){
+        timeRemaining -= 1
+        timeLeftLbl.text = "\(timeRemaining)"
     }
     
     func myAccelerometer() {
