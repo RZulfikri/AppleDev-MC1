@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA7243C6C0B00F6613B /* Haidar.swift */; };
+		28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA9243D739600F6613B /* FlipToStartVC.swift */; };
+		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
+		442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */; };
+		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
+		442E1FC7243DED060068AAAA /* SettingsAmbienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */; };
+		442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */; };
+		44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A041243DC1F500A87F9A /* AmbienceCell.swift */; };
+		44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8A042243DC1F500A87F9A /* AmbienceCell.xib */; };
+		44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A04A243DC70C00A87F9A /* ActivityList.swift */; };
 		44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E64243C63ED000E450B /* AppDelegate.swift */; };
 		44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E66243C63ED000E450B /* SceneDelegate.swift */; };
 		44FC0E69243C63ED000E450B /* SetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E68243C63ED000E450B /* SetTime.swift */; };
@@ -23,10 +33,22 @@
 		45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */; };
 		45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */; };
 		45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6D243F3802002A0BF8 /* DataModel.swift */; };
+		493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528C243EFCEB00860E17 /* SetActivity.swift */; };
+		493C528F243F043900860E17 /* Congratulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528E243F043900860E17 /* Congratulation.swift */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28DDAEA7243C6C0B00F6613B /* Haidar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haidar.swift; sourceTree = "<group>"; };
+		28DDAEA9243D739600F6613B /* FlipToStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipToStartVC.swift; sourceTree = "<group>"; };
+		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
+		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
+		442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAmbienceVC.swift; sourceTree = "<group>"; };
+		442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAmbienceVC.xib; sourceTree = "<group>"; };
+		44A8A041243DC1F500A87F9A /* AmbienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceCell.swift; sourceTree = "<group>"; };
+		44A8A042243DC1F500A87F9A /* AmbienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmbienceCell.xib; sourceTree = "<group>"; };
+		44A8A04A243DC70C00A87F9A /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
 		44FC0E61243C63ED000E450B /* AppleDev-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleDev-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC0E64243C63ED000E450B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FC0E66243C63ED000E450B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +67,8 @@
 		45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModelPicker.swift; sourceTree = "<group>"; };
 		45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfDurations.swift; sourceTree = "<group>"; };
 		45E61C6D243F3802002A0BF8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		493C528C243EFCEB00860E17 /* SetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivity.swift; sourceTree = "<group>"; };
+		493C528E243F043900860E17 /* Congratulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulation.swift; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +83,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441B8DE8243DBAB70042BA01 /* SettingsContent */ = {
+			isa = PBXGroup;
+			children = (
+				442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */,
+				442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */,
+				442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */,
+				442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */,
+				44A8A041243DC1F500A87F9A /* AmbienceCell.swift */,
+				44A8A042243DC1F500A87F9A /* AmbienceCell.xib */,
+			);
+			path = SettingsContent;
+			sourceTree = "<group>";
+		};
+		44A8A047243DC63800A87F9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		44FC0E58243C63ED000E450B = {
 			isa = PBXGroup;
 			children = (
@@ -78,12 +123,18 @@
 		44FC0E63243C63ED000E450B /* AppleDev-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				44A8A047243DC63800A87F9A /* Models */,
+				441B8DE8243DBAB70042BA01 /* SettingsContent */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
+				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
+				28DDAEA7243C6C0B00F6613B /* Haidar.swift */,
 				44FC0E68243C63ED000E450B /* SetTime.swift */,
 				45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */,
 				45E61C6D243F3802002A0BF8 /* DataModel.swift */,
 				45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */,
+				493C528E243F043900860E17 /* Congratulation.swift */,
+				493C528C243EFCEB00860E17 /* SetActivity.swift */,
 				45E61C4A243D96BF002A0BF8 /* Slide.swift */,
 				45E61C4C243D96E1002A0BF8 /* Slide.xib */,
 				44FC0E6A243C63ED000E450B /* Main.storyboard */,
@@ -96,6 +147,7 @@
 				45E61C5A243F01D4002A0BF8 /* Thuderstorm.mp3 */,
 				45E61C56243F01C0002A0BF8 /* Forest 1.mp3 */,
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -158,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */,
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				45E61C59243F01C9002A0BF8 /* Ocean Waves.mp3 in Resources */,
 				45E61C55243F01B1002A0BF8 /* Coffee Shop.mp3 in Resources */,
@@ -166,6 +219,9 @@
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				45E61C5B243F01D4002A0BF8 /* Thuderstorm.mp3 in Resources */,
 				45E61C5D243F1B55002A0BF8 /* Campfire.mp3 in Resources */,
+				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
+				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
+				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
 				45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,10 +233,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442E1FC7243DED060068AAAA /* SettingsAmbienceVC.swift in Sources */,
+				44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */,
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
+				44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */,
+				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
+				493C528F243F043900860E17 /* Congratulation.swift in Sources */,
+				493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */,
+				28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */,
+				28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */,
+				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
+				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
+				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */,
+				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */,
 				45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */,
