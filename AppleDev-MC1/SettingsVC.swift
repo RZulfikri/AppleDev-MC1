@@ -28,18 +28,13 @@ class SettingsVC: UIViewController {
         
         settingsActivityVC = SettingsActivityVC()
         settingsAmbienceVC = SettingsAmbienceVC()
-           
-//        settingsActivityVC.frame = contentContainer.bounds
-//        settingsActivityVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        settingsAmbienceVC.frame = contentContainer.bounds
-//        settingsAmbienceVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        settingsActivityVC.view.frame = contentContainer.bounds
+
+        settingsAmbienceVC.view.frame = CGRect(x: contentContainer.frame.minX, y: 0.0, width: (contentContainer.frame.width - (contentContainer.frame.minX * 2)), height: 737.0)
         settingsActivityVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         settingsActivityVC.didMove(toParent: self)
         contentContainer.addSubview(settingsActivityVC.view)
 
-        settingsAmbienceVC.view.frame = contentContainer.bounds
+        settingsAmbienceVC.view.frame = CGRect(x: contentContainer.frame.minX, y: 0.0, width: (contentContainer.frame.width - (contentContainer.frame.minX * 2)), height: 737.0)
         settingsAmbienceVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         settingsAmbienceVC.didMove(toParent: self)
         contentContainer.addSubview(settingsAmbienceVC.view)

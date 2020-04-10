@@ -8,29 +8,42 @@
 
 import UIKit
 
-class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     let cellIdentifier = "ambienceCell"
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("collection view \(self.collectionView.frame) view \(self.view.frame)")
+        print("collection view \(self.collectionView.bounds) view \(self.view.bounds)")
         self.collectionView.register(UINib(nibName: "AmbienceCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+ 
         // Do any additional setup after loading the view.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return globalAmbiences.getAmbienceList().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AmbienceCell
+        
+        cell.image.image = UIImage(named: globalAmbiences.getAmbienceList()[indexPath.row].imageName)
+        cell.image.frame = cell.bounds
+          
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = (view.frame.width-(12 * 2))/3
+        
+        return CGSize(width: width, height: width * 1.75)
+    }
+    
 
     /*
     // MARK: - Navigation

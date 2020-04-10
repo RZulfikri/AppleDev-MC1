@@ -9,7 +9,8 @@
 import UIKit
 
 class AmbienceCell: UICollectionViewCell {
-
+    @IBOutlet var image: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

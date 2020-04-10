@@ -14,6 +14,8 @@
 		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
 		442E1FC7243DED060068AAAA /* SettingsAmbienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */; };
 		442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */; };
+		4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4450021D24406AFB00445BCF /* AmbienceList.swift */; };
+		4450022024406B5900445BCF /* Ambience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4450021F24406B5900445BCF /* Ambience.swift */; };
 		44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A041243DC1F500A87F9A /* AmbienceCell.swift */; };
 		44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8A042243DC1F500A87F9A /* AmbienceCell.xib */; };
 		44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A04A243DC70C00A87F9A /* ActivityList.swift */; };
@@ -41,6 +43,8 @@
 		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
 		442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAmbienceVC.swift; sourceTree = "<group>"; };
 		442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAmbienceVC.xib; sourceTree = "<group>"; };
+		4450021D24406AFB00445BCF /* AmbienceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceList.swift; sourceTree = "<group>"; };
+		4450021F24406B5900445BCF /* Ambience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambience.swift; sourceTree = "<group>"; };
 		44A8A041243DC1F500A87F9A /* AmbienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceCell.swift; sourceTree = "<group>"; };
 		44A8A042243DC1F500A87F9A /* AmbienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmbienceCell.xib; sourceTree = "<group>"; };
 		44A8A04A243DC70C00A87F9A /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
+				4450021D24406AFB00445BCF /* AmbienceList.swift */,
+				4450021F24406B5900445BCF /* Ambience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +123,7 @@
 			children = (
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
@@ -132,7 +139,6 @@
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
-				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				490F023E243F498C003B9737 /* MusicPlayer.swift in Sources */,
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */,
+				4450022024406B5900445BCF /* Ambience.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				493C528F243F043900860E17 /* Congratulation.swift in Sources */,
 				493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */,
@@ -228,6 +235,7 @@
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
+				4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */,
 			);
