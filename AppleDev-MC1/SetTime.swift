@@ -15,12 +15,13 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var durationPicker: UIPickerView!
+    @IBOutlet weak var startBtn: RoundButton!
     
     var slides: [Slide] = []
     var musicPlayer: AVAudioPlayer?
     var durationModelPicker: DurationModelPicker!
     var rotationAngle: CGFloat!
-    
+    var selectedDuration: Int = 0
     
     override func viewDidLoad() {
        
@@ -46,6 +47,8 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
     
     // Setup Duration Picker
     func setupPicker() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getSelectedDuration), name: Notification.Name("pickedDuration"), object: nil)
         
         rotationAngle = -90 * (.pi / 180)
         
@@ -161,6 +164,19 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
         }
         
         backgroundMusic(index: Int(pageIndex))
+    }
+    
+    @objc func getSelectedDuration() {
+       let indexSelectedDuration = durationPicker.selectedRow(inComponent: 0)
+
+        
+        let tempSelectedDuration = durationModelPicker.modelData[indexSelectedDuration]
+        
+        selectedDuration = Int(tempSelectedDuration.duration)!
+    }
+    
+    @IBAction func startActivity(_ sender: UIButton) {
+        print(selectedDuration)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

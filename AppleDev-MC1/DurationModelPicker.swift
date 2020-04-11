@@ -45,4 +45,8 @@ extension DurationModelPicker: UIPickerViewDelegate {
         
         return view
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        NotificationCenter.default.post(name: Notification.Name("pickedDuration"), object: self)
+    }
 }

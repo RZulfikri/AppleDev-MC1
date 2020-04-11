@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mJs-3a-sqr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -164,6 +164,9 @@
                                         <integer key="value" value="26"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startActivity:" destination="mJs-3a-sqr" eventType="touchUpInside" id="UeJ-VA-tsG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3G-WL-8GI">
                                 <rect key="frame" x="20" y="474" width="374" height="21"/>
@@ -191,6 +194,7 @@
                         <outlet property="durationPicker" destination="POb-2Z-bvm" id="Vsh-eG-dDE"/>
                         <outlet property="pageControl" destination="Pe7-NL-RFe" id="14Y-F9-o6D"/>
                         <outlet property="scrollView" destination="hhs-sa-Xpo" id="MzN-bj-fGo"/>
+                        <outlet property="startBtn" destination="5h7-oA-S9N" id="Fmb-Ke-CzO"/>
                         <outlet property="titleLbl" destination="o3G-WL-8GI" id="OrJ-ea-hUx"/>
                     </connections>
                 </viewController>
@@ -427,7 +431,6 @@
         <image name="arrowFlipInstrution" width="252" height="84"/>
         <image name="arrowtriangle.left.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
-        <image name="cancelActivityButton" width="546" height="117"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="girl1" width="4760" height="3173"/>
