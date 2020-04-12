@@ -59,6 +59,18 @@ class SettingsActivityVC: UIViewController, UITableViewDelegate, UITableViewData
         nil
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+           if editingStyle == .delete {
+
+            globalActivities.removeActivity(index: indexPath.row)
+               tableView.deleteRows(at: [indexPath], with: .fade)
+
+           } else if editingStyle == .insert {
+               // Not used in our example, but if you were adding a new row, this is where you would do it.
+           }
+       }
+        
     func showInputDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
