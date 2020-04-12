@@ -16,6 +16,9 @@
 		45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C4A243D96BF002A0BF8 /* Slide.swift */; };
 		45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C4C243D96E1002A0BF8 /* Slide.xib */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
+		F735D3172443460C0044C689 /* sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F735D3142443460B0044C689 /* sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3 */; };
+		F735D3182443460C0044C689 /* Forest Stream Ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F735D3152443460B0044C689 /* Forest Stream Ambient.mp3 */; };
+		F735D3192443460C0044C689 /* Cafe Ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F735D3162443460C0044C689 /* Cafe Ambience.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		45E61C4A243D96BF002A0BF8 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		45E61C4C243D96E1002A0BF8 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		F735D3142443460B0044C689 /* sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3; sourceTree = "<group>"; };
+		F735D3152443460B0044C689 /* Forest Stream Ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Forest Stream Ambient.mp3"; sourceTree = "<group>"; };
+		F735D3162443460C0044C689 /* Cafe Ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cafe Ambience.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
+				F735D3162443460C0044C689 /* Cafe Ambience.mp3 */,
+				F735D3152443460B0044C689 /* Forest Stream Ambient.mp3 */,
+				F735D3142443460B0044C689 /* sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3 */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -136,8 +145,11 @@
 			files = (
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */,
+				F735D3182443460C0044C689 /* Forest Stream Ambient.mp3 in Resources */,
+				F735D3172443460C0044C689 /* sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Close_Birds_Loop_01.mp3 in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */,
+				F735D3192443460C0044C689 /* Cafe Ambience.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
