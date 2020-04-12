@@ -32,6 +32,14 @@ class ActivityList {
     func getCount() -> Int {
         return arrActivities.count
     }
+    
+    func getItemAt(index: Int) -> String {
+        return arrActivities[index]
+    }
+    
+    func insertItemAt(activity: String, index: Int) {
+        return arrActivities.insert(activity, at: index)
+    }
 }
 
 
