@@ -123,6 +123,10 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="EKh-ZI-3Po"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Y9I-c2-EBa"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Pe7-NL-RFe">
+                                <rect key="frame" x="102" y="486" width="211" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                             <view alpha="0.60000002384185791" contentMode="scaleToFill" id="aGU-rT-icv" customClass="RoundButton" customModule="AppleDev_MC1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="531" width="414" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -160,18 +164,38 @@
                                         <integer key="value" value="26"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startActivity:" destination="mJs-3a-sqr" eventType="touchUpInside" id="UeJ-VA-tsG"/>
+                                </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Pe7-NL-RFe">
-                                <rect key="frame" x="188" y="486" width="39" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3G-WL-8GI">
+                                <rect key="frame" x="20" y="474" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POb-2Z-bvm">
+                                <rect key="frame" x="20" y="597" width="374" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-Zq-FNV">
+                                <rect key="frame" x="174" y="572" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AD3-Qu-C9U"/>
                     </view>
                     <connections>
+                        <outlet property="durationPicker" destination="POb-2Z-bvm" id="Vsh-eG-dDE"/>
                         <outlet property="pageControl" destination="Pe7-NL-RFe" id="14Y-F9-o6D"/>
                         <outlet property="scrollView" destination="hhs-sa-Xpo" id="MzN-bj-fGo"/>
+                        <outlet property="startBtn" destination="5h7-oA-S9N" id="Fmb-Ke-CzO"/>
+                        <outlet property="titleLbl" destination="o3G-WL-8GI" id="OrJ-ea-hUx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb3-cA-yxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
