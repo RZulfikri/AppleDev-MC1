@@ -54,9 +54,17 @@ class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AmbienceCell
         
-        cell.image.image = UIImage(named: globalAmbiences.getAmbienceList()[indexPath.row].imageName)
+        let currentAmbience = globalAmbiences.getAmbienceAt(index: indexPath.row)
+        cell.image.image = UIImage(named: currentAmbience.imageName)
         cell.image.frame = cell.bounds
-          
+        cell.iconCross.frame = cell.bounds
+                
+        if (currentAmbience.selected) {
+            cell.iconCross.isHidden = false
+        } else {
+            cell.iconCross.isHidden = true
+        }
+                  
         return cell
     }
     
@@ -65,6 +73,15 @@ class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollecti
         let cellWidth = width / 3
         
         return CGSize(width: cellWidth, height: cellWidth * 1.75)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (globalAmbiences.getAmbienceAt(index: indexPath.row).selected) {
+            globalAmbiences.unselectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+        } else {
+            globalAmbiences.selectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+        }
+        self.collectionView.reloadData()
     }
     
 

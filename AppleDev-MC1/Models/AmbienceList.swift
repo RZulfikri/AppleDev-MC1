@@ -24,7 +24,7 @@ class AmbienceList {
             arrAmbience.remove(at: index)
             var newAmbience = ambience
             newAmbience.selected = true
-            arrAmbience.insert(ambience, at: index)
+            arrAmbience.insert(newAmbience, at: index)
         }
     }
     
@@ -35,12 +35,16 @@ class AmbienceList {
            arrAmbience.remove(at: index)
            var newAmbience = ambience
            newAmbience.selected = false
-           arrAmbience.insert(ambience, at: index)
+           arrAmbience.insert(newAmbience, at: index)
        }
     }
     
     func getAmbienceList() -> [Ambience] {
         return self.arrAmbience
+    }
+    
+    func getAmbienceAt(index: Int) -> Ambience {
+        return self.arrAmbience[index]
     }
 }
 

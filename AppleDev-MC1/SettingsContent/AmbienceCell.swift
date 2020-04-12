@@ -10,6 +10,7 @@ import UIKit
 
 class AmbienceCell: UICollectionViewCell {
     @IBOutlet var image: UIImageView!
+    @IBOutlet var iconCross: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

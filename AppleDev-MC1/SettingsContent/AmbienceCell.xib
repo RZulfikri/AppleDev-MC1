@@ -24,6 +24,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="circle-cross" id="83o-Dt-gfd">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="227"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -32,9 +37,13 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="218" height="91"/>
             <connections>
+                <outlet property="iconCross" destination="83o-Dt-gfd" id="yr5-Jp-zZ5"/>
                 <outlet property="image" destination="5LK-fz-M6F" id="aSP-VC-rxs"/>
             </connections>
             <point key="canvasLocation" x="292.75362318840581" y="89.397321428571431"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="circle-cross" width="65" height="65"/>
+    </resources>
 </document>
