@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZb-Q4-Q1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908.6956521739132" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2819" y="125"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rjk-MI-kfi">
@@ -396,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoH-DS-lJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="138"/>
+            <point key="canvasLocation" x="1422" y="125"/>
         </scene>
         <!--Onboard Swiping Controller-->
         <scene sceneID="lnO-ZT-dw3">
@@ -415,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr7-Xx-Adb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="-790"/>
+            <point key="canvasLocation" x="1549" y="-790"/>
         </scene>
         <!--Item-->
         <scene sceneID="eUc-1M-dJW">
@@ -431,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3F-GP-7CB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699" y="138"/>
+            <point key="canvasLocation" x="4372" y="125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="arU-oJ-Zi4">
@@ -477,7 +477,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUw-rt-jCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="-790"/>
+            <point key="canvasLocation" x="-36" y="-790"/>
         </scene>
     </scenes>
     <resources>
