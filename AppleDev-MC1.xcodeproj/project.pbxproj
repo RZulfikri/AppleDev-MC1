@@ -12,6 +12,8 @@
 		44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */; };
 		44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */; };
 		44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */; };
+		440246BB24435816008B391B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440246BA24435816008B391B /* History.swift */; };
+		440246BD2443584F008B391B /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440246BC2443584F008B391B /* HistoryList.swift */; };
 		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
 		442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */; };
 		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
@@ -44,12 +46,15 @@
 		493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528C243EFCEB00860E17 /* SetActivity.swift */; };
 		493C528F243F043900860E17 /* Congratulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528E243F043900860E17 /* Congratulation.swift */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
+		F7250C86244348DF00E7B33D /* Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7250C83244348DE00E7B33D /* Forest.mp3 */; };
+		F7250C87244348DF00E7B33D /* Bird.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7250C84244348DF00E7B33D /* Bird.mp3 */; };
+		F7250C88244348DF00E7B33D /* Cafe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7250C85244348DF00E7B33D /* Cafe.mp3 */; };
 		F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08986243F8EE300C500C5 /* OnboardViewController.swift */; };
 		F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */; };
 		F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898A2440535D00C500C5 /* PageCell.swift */; };
 		F7E0898D24405BE300C500C5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898C24405BE300C500C5 /* Page.swift */; };
-		F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* fireloop.mp3 */; };
-		F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */; };
+		F7E0898F244061DB00C500C5 /* Fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* Fireloop.mp3 */; };
+		F7E08991244061E400C500C5 /* Cyberpunk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,8 @@
 		44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAmbienceSectionHeader.swift; sourceTree = "<group>"; };
 		44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAmbienceSectionHeader.xib; sourceTree = "<group>"; };
 		44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingActivitySectionHeader.swift; sourceTree = "<group>"; };
+		440246BA24435816008B391B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		440246BC2443584F008B391B /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
 		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
@@ -92,12 +99,15 @@
 		493C528C243EFCEB00860E17 /* SetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivity.swift; sourceTree = "<group>"; };
 		493C528E243F043900860E17 /* Congratulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulation.swift; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		F7250C83244348DE00E7B33D /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Forest.mp3; sourceTree = "<group>"; };
+		F7250C84244348DF00E7B33D /* Bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bird.mp3; sourceTree = "<group>"; };
+		F7250C85244348DF00E7B33D /* Cafe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cafe.mp3; sourceTree = "<group>"; };
 		F7E08986243F8EE300C500C5 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSwipingController.swift; sourceTree = "<group>"; };
 		F7E0898A2440535D00C500C5 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		F7E0898C24405BE300C500C5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		F7E0898E244061DB00C500C5 /* fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireloop.mp3; sourceTree = "<group>"; };
-		F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cyberpunk Ambience - Apartment View (loop + music).mp3"; sourceTree = "<group>"; };
+		F7E0898E244061DB00C500C5 /* Fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireloop.mp3; sourceTree = "<group>"; };
+		F7E08990244061E400C500C5 /* Cyberpunk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cyberpunk.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,8 @@
 				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
 				4450021D24406AFB00445BCF /* AmbienceList.swift */,
 				4450021F24406B5900445BCF /* Ambience.swift */,
+				440246BA24435816008B391B /* History.swift */,
+				440246BC2443584F008B391B /* HistoryList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,8 +206,11 @@
 		F7E08992244061EC00C500C5 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				F7E0898E244061DB00C500C5 /* fireloop.mp3 */,
-				F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */,
+				F7E0898E244061DB00C500C5 /* Fireloop.mp3 */,
+				F7E08990244061E400C500C5 /* Cyberpunk.mp3 */,
+				F7250C85244348DF00E7B33D /* Cafe.mp3 */,
+				F7250C83244348DE00E7B33D /* Forest.mp3 */,
+				F7250C84244348DF00E7B33D /* Bird.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -282,9 +297,12 @@
 				45E61C7424435D83002A0BF8 /* Forest 1.mp3 in Resources */,
 				45E61C7824435D83002A0BF8 /* Ocean Waves.mp3 in Resources */,
 				44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */,
-				F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */,
-				F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */,
+				F7E08991244061E400C500C5 /* Cyberpunk.mp3 in Resources */,
+				F7250C86244348DF00E7B33D /* Forest.mp3 in Resources */,
+				F7E0898F244061DB00C500C5 /* Fireloop.mp3 in Resources */,
+				F7250C88244348DF00E7B33D /* Cafe.mp3 in Resources */,
 				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
+				F7250C87244348DF00E7B33D /* Bird.mp3 in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
 				44D22769243F3BFD00A8779B /* ActivityCell.xib in Resources */,
@@ -313,11 +331,13 @@
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
 				44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */,
 				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
+				440246BD2443584F008B391B /* HistoryList.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */,
 				F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */,
 				F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */,
+				440246BB24435816008B391B /* History.swift in Sources */,
 				F7E0898D24405BE300C500C5 /* Page.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */,
