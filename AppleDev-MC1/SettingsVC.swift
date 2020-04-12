@@ -11,32 +11,48 @@ import UIKit
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var segmentedCtrl: UISegmentedControl!
-    @IBOutlet weak var contentContainer: UIView!
+    @IBOutlet var contentContainer: UIView!
     
-    var settingsActivityVC: UIView!
-    var settingsAmbienceVC: UIView!
+    var settingsActivityVC: UIViewController!
+    var settingsAmbienceVC: UIViewController!
     
-    var currentIndex: Int = 0
+    var currentIndex: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = segmentedCtrl.selectedSegmentIndex
         setupLayoutContent()
-        changeScreenByIndex(index: currentIndex)
+        
+        self.title = "Activity Settings"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.layoutMargins.left = 37
     }
     
     func setupLayoutContent() {
-        settingsActivityVC = SettingsActivityVC().view
-        settingsAmbienceVC = SettingsAmbienceVC().view
-           
-        settingsActivityVC.frame = contentContainer.bounds
-        settingsActivityVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       print(contentContainer.bounds)
-        settingsAmbienceVC.frame = contentContainer.bounds
-        settingsAmbienceVC.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       
-        contentContainer.addSubview(settingsActivityVC)
-        contentContainer.addSubview(settingsAmbienceVC)
+        
+        settingsActivityVC = SettingsActivityVC()
+        settingsAmbienceVC = SettingsAmbienceVC()
+
+        settingsAmbienceVC.view.frame = CGRect(x: contentContainer.frame.minX, y: 0.0, width: (contentContainer.frame.width - (contentContainer.frame.minX * 2)), height: 737.0)
+        settingsActivityVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        settingsActivityVC.didMove(toParent: self)
+        contentContainer.addSubview(settingsActivityVC.view)
+
+        settingsAmbienceVC.view.frame = CGRect(x: contentContainer.frame.minX, y: 0.0, width: (contentContainer.frame.width - (contentContainer.frame.minX * 2)), height: 737.0)
+        settingsAmbienceVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        settingsAmbienceVC.didMove(toParent: self)
+        contentContainer.addSubview(settingsAmbienceVC.view)
+        
+        segmentedCtrl.backgroundColor = UIColor(red: CGFloat(28/255), green: CGFloat(28/255), blue: CGFloat(31/255), alpha: CGFloat(1.0))
+        segmentedCtrl.selectedSegmentTintColor = UIColor(red: CGFloat(255/255), green: CGFloat(255/255), blue: CGFloat(255/255), alpha: CGFloat(0.2))
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        segmentedCtrl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        segmentedCtrl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+
+        
+        changeScreenByIndex(index: currentIndex)
     }
     
 
@@ -52,9 +68,9 @@ class SettingsVC: UIViewController {
     
     func changeScreenByIndex(index: Int) {
         if (index == 0) {
-            contentContainer.bringSubviewToFront(settingsActivityVC)
+            contentContainer.bringSubviewToFront(settingsActivityVC.view)
         } else {
-            contentContainer.bringSubviewToFront(settingsAmbienceVC)
+            contentContainer.bringSubviewToFront(settingsAmbienceVC.view)
         }
     }
 

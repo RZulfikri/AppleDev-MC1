@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class SetActivity: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var PageControl: UIPageControl!
@@ -18,7 +18,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     
     var slides:[Slide] = []
     var activity:[String] = []
-    
+    var player: AVAudioPlayer = AVAudioPlayer()
        override func viewDidLoad() {
            super.viewDidLoad()
            // Do any additional setup after loading the view.
@@ -31,6 +31,13 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
            PageControl.numberOfPages = slides.count
            PageControl.currentPage = 0
            view.bringSubviewToFront(PageControl)
+         do{
+            let audioPath = Bundle.main.path(forResource: globalAmbiences.getAmbienceAt(index: PageControl.currentPage).audioName, ofType: ".mp3")
+                  try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+              }
+              catch{
+                  //ERROR
+              }
        }
 
     
@@ -51,19 +58,19 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
        func createSlides() -> [Slide] {
 
            let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-           slide1.imageView.image = UIImage(named: "andrik-langfield-0rTCXZM7Xfo-unsplash")
+        slide1.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:0).imageName)
            
            let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-           slide2.imageView.image = UIImage(named: "estee-janssens-aQfhbxailCs-unsplash")
+           slide2.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:1).imageName)
            
            let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-           slide3.imageView.image = UIImage(named: "hanny-naibaho-0YbeoQOX89k-unsplash")
+           slide3.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:2).imageName)
            
            let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-           slide4.imageView.image = UIImage(named: "matteo-vistocco-Dph00R2SwFo-unsplash")
-           
+           slide4.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:3).imageName)
+        
            let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-           slide5.imageView.image = UIImage(named: "neonbrand-hKegPH8_4Rg-unsplash")
+           slide5.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:4).imageName)
            
            return [slide1, slide2, slide3, slide4, slide5]
        }
