@@ -12,6 +12,8 @@
 		44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */; };
 		44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */; };
 		44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */; };
+		440246BB24435816008B391B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440246BA24435816008B391B /* History.swift */; };
+		440246BD2443584F008B391B /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440246BC2443584F008B391B /* HistoryList.swift */; };
 		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
 		442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */; };
 		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
@@ -32,6 +34,14 @@
 		44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */; };
 		45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C4A243D96BF002A0BF8 /* Slide.swift */; };
 		45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C4C243D96E1002A0BF8 /* Slide.xib */; };
+		45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */; };
+		45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */; };
+		45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6D243F3802002A0BF8 /* DataModel.swift */; };
+		45E61C7424435D83002A0BF8 /* Forest 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */; };
+		45E61C7524435D83002A0BF8 /* Coffee Shop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */; };
+		45E61C7624435D83002A0BF8 /* Thuderstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */; };
+		45E61C7724435D83002A0BF8 /* Campfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7224435D83002A0BF8 /* Campfire.mp3 */; };
+		45E61C7824435D83002A0BF8 /* Ocean Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7324435D83002A0BF8 /* Ocean Waves.mp3 */; };
 		490F023E243F498C003B9737 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F023D243F498C003B9737 /* MusicPlayer.swift */; };
 		493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528C243EFCEB00860E17 /* SetActivity.swift */; };
 		493C528F243F043900860E17 /* Congratulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528E243F043900860E17 /* Congratulation.swift */; };
@@ -53,6 +63,8 @@
 		44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAmbienceSectionHeader.swift; sourceTree = "<group>"; };
 		44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAmbienceSectionHeader.xib; sourceTree = "<group>"; };
 		44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingActivitySectionHeader.swift; sourceTree = "<group>"; };
+		440246BA24435816008B391B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		440246BC2443584F008B391B /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
 		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
@@ -75,6 +87,14 @@
 		44FC0E72243C63EF000E450B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E61C4A243D96BF002A0BF8 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		45E61C4C243D96E1002A0BF8 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModelPicker.swift; sourceTree = "<group>"; };
+		45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfDurations.swift; sourceTree = "<group>"; };
+		45E61C6D243F3802002A0BF8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Forest 1.mp3"; path = "15 Free Ambient Sound Effects/Forest 1.mp3"; sourceTree = SOURCE_ROOT; };
+		45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Coffee Shop.mp3"; path = "15 Free Ambient Sound Effects/Coffee Shop.mp3"; sourceTree = SOURCE_ROOT; };
+		45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Thuderstorm.mp3; path = "15 Free Ambient Sound Effects/Thuderstorm.mp3"; sourceTree = SOURCE_ROOT; };
+		45E61C7224435D83002A0BF8 /* Campfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Campfire.mp3; path = "15 Free Ambient Sound Effects/Campfire.mp3"; sourceTree = SOURCE_ROOT; };
+		45E61C7324435D83002A0BF8 /* Ocean Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ocean Waves.mp3"; path = "15 Free Ambient Sound Effects/Ocean Waves.mp3"; sourceTree = SOURCE_ROOT; };
 		490F023D243F498C003B9737 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		493C528C243EFCEB00860E17 /* SetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivity.swift; sourceTree = "<group>"; };
 		493C528E243F043900860E17 /* Congratulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulation.swift; sourceTree = "<group>"; };
@@ -125,6 +145,8 @@
 				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
 				4450021D24406AFB00445BCF /* AmbienceList.swift */,
 				4450021F24406B5900445BCF /* Ambience.swift */,
+				440246BA24435816008B391B /* History.swift */,
+				440246BC2443584F008B391B /* HistoryList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,16 +179,25 @@
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
 				28DDAEA7243C6C0B00F6613B /* Haidar.swift */,
 				44FC0E68243C63ED000E450B /* SetTime.swift */,
+				45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */,
+				45E61C6D243F3802002A0BF8 /* DataModel.swift */,
+				45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */,
 				493C528E243F043900860E17 /* Congratulation.swift */,
 				493C528C243EFCEB00860E17 /* SetActivity.swift */,
 				45E61C4A243D96BF002A0BF8 /* Slide.swift */,
 				45E61C4C243D96E1002A0BF8 /* Slide.xib */,
 				44FC0E6A243C63ED000E450B /* Main.storyboard */,
 				490F023D243F498C003B9737 /* MusicPlayer.swift */,
+				45E61C7224435D83002A0BF8 /* Campfire.mp3 */,
+				45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */,
+				45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */,
+				45E61C7324435D83002A0BF8 /* Ocean Waves.mp3 */,
+				45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */,
 				4984E60A243C79E800EB2B8C /* RoundButton.swift */,
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
-				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
+				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 				F7E08992244061EC00C500C5 /* Music */,
 			);
 			path = "AppleDev-MC1";
@@ -253,9 +284,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E61C7624435D83002A0BF8 /* Thuderstorm.mp3 in Resources */,
+				45E61C7724435D83002A0BF8 /* Campfire.mp3 in Resources */,
 				442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */,
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */,
+				45E61C7524435D83002A0BF8 /* Coffee Shop.mp3 in Resources */,
+				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
+				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
+				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
+				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
+				45E61C7424435D83002A0BF8 /* Forest 1.mp3 in Resources */,
+				45E61C7824435D83002A0BF8 /* Ocean Waves.mp3 in Resources */,
 				44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */,
 				F7E08991244061E400C500C5 /* Cyberpunk.mp3 in Resources */,
 				F7250C86244348DF00E7B33D /* Forest.mp3 in Resources */,
@@ -291,10 +331,13 @@
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
 				44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */,
 				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
+				440246BD2443584F008B391B /* HistoryList.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
+				45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */,
 				F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */,
 				F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */,
+				440246BB24435816008B391B /* History.swift in Sources */,
 				F7E0898D24405BE300C500C5 /* Page.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */,
@@ -302,6 +345,8 @@
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
 				4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
+				45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */,
+				45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */,
 				45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
