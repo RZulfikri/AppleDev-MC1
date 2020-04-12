@@ -9,45 +9,59 @@
 /* Begin PBXBuildFile section */
 		28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA7243C6C0B00F6613B /* Haidar.swift */; };
 		28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA9243D739600F6613B /* FlipToStartVC.swift */; };
+		44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */; };
+		44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */; };
+		44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */; };
 		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
 		442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */; };
 		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
 		442E1FC7243DED060068AAAA /* SettingsAmbienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */; };
 		442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */; };
+		4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4450021D24406AFB00445BCF /* AmbienceList.swift */; };
+		4450022024406B5900445BCF /* Ambience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4450021F24406B5900445BCF /* Ambience.swift */; };
 		44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A041243DC1F500A87F9A /* AmbienceCell.swift */; };
 		44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A8A042243DC1F500A87F9A /* AmbienceCell.xib */; };
 		44A8A04B243DC70C00A87F9A /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8A04A243DC70C00A87F9A /* ActivityList.swift */; };
+		44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D22766243F3BFD00A8779B /* ActivityCell.swift */; };
+		44D22769243F3BFD00A8779B /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D22767243F3BFD00A8779B /* ActivityCell.xib */; };
 		44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E64243C63ED000E450B /* AppDelegate.swift */; };
 		44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E66243C63ED000E450B /* SceneDelegate.swift */; };
 		44FC0E69243C63ED000E450B /* SetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0E68243C63ED000E450B /* SetTime.swift */; };
 		44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6A243C63ED000E450B /* Main.storyboard */; };
 		44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6D243C63EF000E450B /* Assets.xcassets */; };
 		44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */; };
-		F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08986243F8EE300C500C5 /* OnboardViewController.swift */; };
-		F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */; };
-		F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898A2440535D00C500C5 /* PageCell.swift */; };
-		F7E0898D24405BE300C500C5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898C24405BE300C500C5 /* Page.swift */; };
-		F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* fireloop.mp3 */; };
-		F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */; };
 		45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C4A243D96BF002A0BF8 /* Slide.swift */; };
 		45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C4C243D96E1002A0BF8 /* Slide.xib */; };
 		490F023E243F498C003B9737 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F023D243F498C003B9737 /* MusicPlayer.swift */; };
 		493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528C243EFCEB00860E17 /* SetActivity.swift */; };
 		493C528F243F043900860E17 /* Congratulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C528E243F043900860E17 /* Congratulation.swift */; };
 		4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984E60A243C79E800EB2B8C /* RoundButton.swift */; };
+		F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08986243F8EE300C500C5 /* OnboardViewController.swift */; };
+		F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */; };
+		F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898A2440535D00C500C5 /* PageCell.swift */; };
+		F7E0898D24405BE300C500C5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898C24405BE300C500C5 /* Page.swift */; };
+		F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* fireloop.mp3 */; };
+		F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28DDAEA7243C6C0B00F6613B /* Haidar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haidar.swift; sourceTree = "<group>"; };
 		28DDAEA9243D739600F6613B /* FlipToStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipToStartVC.swift; sourceTree = "<group>"; };
+		44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAmbienceSectionHeader.swift; sourceTree = "<group>"; };
+		44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAmbienceSectionHeader.xib; sourceTree = "<group>"; };
+		44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingActivitySectionHeader.swift; sourceTree = "<group>"; };
 		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
 		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
 		442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAmbienceVC.swift; sourceTree = "<group>"; };
 		442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAmbienceVC.xib; sourceTree = "<group>"; };
+		4450021D24406AFB00445BCF /* AmbienceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceList.swift; sourceTree = "<group>"; };
+		4450021F24406B5900445BCF /* Ambience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambience.swift; sourceTree = "<group>"; };
 		44A8A041243DC1F500A87F9A /* AmbienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceCell.swift; sourceTree = "<group>"; };
 		44A8A042243DC1F500A87F9A /* AmbienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmbienceCell.xib; sourceTree = "<group>"; };
 		44A8A04A243DC70C00A87F9A /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
+		44D22766243F3BFD00A8779B /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		44D22767243F3BFD00A8779B /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		44FC0E61243C63ED000E450B /* AppleDev-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleDev-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC0E64243C63ED000E450B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FC0E66243C63ED000E450B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,18 +70,18 @@
 		44FC0E6D243C63EF000E450B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FC0E70243C63EF000E450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44FC0E72243C63EF000E450B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7E08986243F8EE300C500C5 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
-		F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSwipingController.swift; sourceTree = "<group>"; };
-		F7E0898A2440535D00C500C5 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
-		F7E0898C24405BE300C500C5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		F7E0898E244061DB00C500C5 /* fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireloop.mp3; sourceTree = "<group>"; };
-		F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cyberpunk Ambience - Apartment View (loop + music).mp3"; sourceTree = "<group>"; };
 		45E61C4A243D96BF002A0BF8 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		45E61C4C243D96E1002A0BF8 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		490F023D243F498C003B9737 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		493C528C243EFCEB00860E17 /* SetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivity.swift; sourceTree = "<group>"; };
 		493C528E243F043900860E17 /* Congratulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulation.swift; sourceTree = "<group>"; };
 		4984E60A243C79E800EB2B8C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		F7E08986243F8EE300C500C5 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSwipingController.swift; sourceTree = "<group>"; };
+		F7E0898A2440535D00C500C5 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		F7E0898C24405BE300C500C5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F7E0898E244061DB00C500C5 /* fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireloop.mp3; sourceTree = "<group>"; };
+		F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cyberpunk Ambience - Apartment View (loop + music).mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +100,13 @@
 			children = (
 				442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */,
 				442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */,
+				44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */,
+				44D22766243F3BFD00A8779B /* ActivityCell.swift */,
+				44D22767243F3BFD00A8779B /* ActivityCell.xib */,
 				442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */,
 				442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */,
+				44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */,
+				44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */,
 				44A8A041243DC1F500A87F9A /* AmbienceCell.swift */,
 				44A8A042243DC1F500A87F9A /* AmbienceCell.xib */,
 			);
@@ -98,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				44A8A04A243DC70C00A87F9A /* ActivityList.swift */,
+				4450021D24406AFB00445BCF /* AmbienceList.swift */,
+				4450021F24406B5900445BCF /* Ambience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +145,7 @@
 				F7E089932440710D00C500C5 /* Onboarding */,
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
@@ -140,7 +162,6 @@
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
 				F7E08992244061EC00C500C5 /* Music */,
-				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -226,11 +247,13 @@
 				442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */,
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */,
+				44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */,
 				F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */,
 				F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */,
 				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
+				44D22769243F3BFD00A8779B /* ActivityCell.xib in Resources */,
 				45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,19 +270,25 @@
 				490F023E243F498C003B9737 /* MusicPlayer.swift in Sources */,
 				4984E60B243C79E800EB2B8C /* RoundButton.swift in Sources */,
 				44A8A043243DC1F500A87F9A /* AmbienceCell.swift in Sources */,
+				4450022024406B5900445BCF /* Ambience.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				493C528F243F043900860E17 /* Congratulation.swift in Sources */,
 				493C528D243EFCEB00860E17 /* SetActivity.swift in Sources */,
 				28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */,
 				28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */,
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
+				44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */,
+				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
+				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */,
 				F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */,
 				F7E0898D24405BE300C500C5 /* Page.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */,
+				44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */,
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
+				4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */,
 			);
