@@ -21,7 +21,7 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" dataMode="none" id="HQX-IX-7Zg">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" sectionInsetReference="layoutMargins" id="UHb-to-7CJ">
                         <size key="itemSize" width="180" height="300"/>
                         <size key="headerReferenceSize" width="50" height="50"/>

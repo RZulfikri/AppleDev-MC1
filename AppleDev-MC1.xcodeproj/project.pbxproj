@@ -11,6 +11,7 @@
 		28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA9243D739600F6613B /* FlipToStartVC.swift */; };
 		44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */; };
 		44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */; };
+		44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */; };
 		441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */; };
 		442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */; };
 		442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */; };
@@ -48,6 +49,7 @@
 		28DDAEA9243D739600F6613B /* FlipToStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipToStartVC.swift; sourceTree = "<group>"; };
 		44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAmbienceSectionHeader.swift; sourceTree = "<group>"; };
 		44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAmbienceSectionHeader.xib; sourceTree = "<group>"; };
+		44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingActivitySectionHeader.swift; sourceTree = "<group>"; };
 		441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActivityVC.swift; sourceTree = "<group>"; };
 		442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActivityVC.xib; sourceTree = "<group>"; };
@@ -98,14 +100,15 @@
 			children = (
 				442E1FC1243DECF50068AAAA /* SettingsActivityVC.swift */,
 				442E1FC2243DECF50068AAAA /* SettingsActivityVC.xib */,
+				44016AD024430767000E32BF /* SettingActivitySectionHeader.swift */,
+				44D22766243F3BFD00A8779B /* ActivityCell.swift */,
+				44D22767243F3BFD00A8779B /* ActivityCell.xib */,
 				442E1FC5243DED060068AAAA /* SettingsAmbienceVC.swift */,
 				442E1FC6243DED060068AAAA /* SettingsAmbienceVC.xib */,
 				44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */,
 				44016AC72442F99D000E32BF /* SettingAmbienceSectionHeader.xib */,
 				44A8A041243DC1F500A87F9A /* AmbienceCell.swift */,
 				44A8A042243DC1F500A87F9A /* AmbienceCell.xib */,
-				44D22766243F3BFD00A8779B /* ActivityCell.swift */,
-				44D22767243F3BFD00A8779B /* ActivityCell.xib */,
 			);
 			path = SettingsContent;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				F7E089932440710D00C500C5 /* Onboarding */,
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
@@ -158,7 +162,6 @@
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
 				F7E08992244061EC00C500C5 /* Music */,
-				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */,
 				28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */,
 				442E1FC3243DECF50068AAAA /* SettingsActivityVC.swift in Sources */,
+				44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */,
 				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,

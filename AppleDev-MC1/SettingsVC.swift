@@ -25,6 +25,9 @@ class SettingsVC: UIViewController {
         
         self.title = "Activity Settings"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.layoutMargins.left = 37
     }
     
     func setupLayoutContent() {
@@ -41,6 +44,13 @@ class SettingsVC: UIViewController {
         settingsAmbienceVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         settingsAmbienceVC.didMove(toParent: self)
         contentContainer.addSubview(settingsAmbienceVC.view)
+        
+        segmentedCtrl.backgroundColor = UIColor(red: CGFloat(28/255), green: CGFloat(28/255), blue: CGFloat(31/255), alpha: CGFloat(1.0))
+        segmentedCtrl.selectedSegmentTintColor = UIColor(red: CGFloat(255/255), green: CGFloat(255/255), blue: CGFloat(255/255), alpha: CGFloat(0.2))
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        segmentedCtrl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        segmentedCtrl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+
         
         changeScreenByIndex(index: currentIndex)
     }
