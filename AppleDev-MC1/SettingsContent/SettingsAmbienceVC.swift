@@ -9,20 +9,42 @@
 import UIKit
 
 class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    let HORIZONTAL_LAYOUT_MARGIN: Float = 36
+
     let cellIdentifier = "ambienceCell"
+    let sectionIdentifier = "ambienceSectionHeader"
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("collection view \(self.collectionView.frame) view \(self.view.frame)")
-        print("collection view \(self.collectionView.bounds) view \(self.view.bounds)")
+        self.collectionView.automaticallyAdjustsScrollIndicatorInsets = false
+        self.collectionView.layoutMargins.left = CGFloat(HORIZONTAL_LAYOUT_MARGIN)
+        self.collectionView.layoutMargins.right = CGFloat(HORIZONTAL_LAYOUT_MARGIN)
         self.collectionView.register(UINib(nibName: "AmbienceCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        self.collectionView.register(UINib(nibName: "SettingAmbienceSectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionIdentifier)
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
  
         // Do any additional setup after loading the view.
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionIdentifier, for: indexPath) as? SettingAmbienceSectionHeader {
+                sectionHeader.label.text = "Your Ambience List"
+                  return sectionHeader
+              }
+          default:
+              assert(false, "Unexpected element kind")
+          }
+          return UICollectionReusableView()
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,9 +61,10 @@ class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width  = (view.frame.width-(12 * 2))/3
+        let width  = (view.frame.width - (12 * 2)) - (CGFloat(HORIZONTAL_LAYOUT_MARGIN) * 2)
+        let cellWidth = width / 3
         
-        return CGSize(width: width, height: width * 1.75)
+        return CGSize(width: cellWidth, height: cellWidth * 1.75)
     }
     
 

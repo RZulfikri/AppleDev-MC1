@@ -22,6 +22,9 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         currentIndex = segmentedCtrl.selectedSegmentIndex
         setupLayoutContent()
+        
+        self.title = "Activity Settings"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupLayoutContent() {
