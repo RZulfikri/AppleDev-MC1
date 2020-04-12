@@ -27,6 +27,12 @@
 		44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6A243C63ED000E450B /* Main.storyboard */; };
 		44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6D243C63EF000E450B /* Assets.xcassets */; };
 		44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */; };
+		F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08986243F8EE300C500C5 /* OnboardViewController.swift */; };
+		F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */; };
+		F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898A2440535D00C500C5 /* PageCell.swift */; };
+		F7E0898D24405BE300C500C5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898C24405BE300C500C5 /* Page.swift */; };
+		F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* fireloop.mp3 */; };
+		F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */; };
 		45E61C4B243D96BF002A0BF8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C4A243D96BF002A0BF8 /* Slide.swift */; };
 		45E61C4D243D96E1002A0BF8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C4C243D96E1002A0BF8 /* Slide.xib */; };
 		490F023E243F498C003B9737 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F023D243F498C003B9737 /* MusicPlayer.swift */; };
@@ -58,6 +64,12 @@
 		44FC0E6D243C63EF000E450B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FC0E70243C63EF000E450B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44FC0E72243C63EF000E450B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E08986243F8EE300C500C5 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSwipingController.swift; sourceTree = "<group>"; };
+		F7E0898A2440535D00C500C5 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		F7E0898C24405BE300C500C5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F7E0898E244061DB00C500C5 /* fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireloop.mp3; sourceTree = "<group>"; };
+		F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cyberpunk Ambience - Apartment View (loop + music).mp3"; sourceTree = "<group>"; };
 		45E61C4A243D96BF002A0BF8 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		45E61C4C243D96E1002A0BF8 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		490F023D243F498C003B9737 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -121,6 +133,7 @@
 		44FC0E63243C63ED000E450B /* AppleDev-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				F7E089932440710D00C500C5 /* Onboarding */,
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
 				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
@@ -139,8 +152,30 @@
 				44FC0E6D243C63EF000E450B /* Assets.xcassets */,
 				44FC0E6F243C63EF000E450B /* LaunchScreen.storyboard */,
 				44FC0E72243C63EF000E450B /* Info.plist */,
+				F7E08992244061EC00C500C5 /* Music */,
+				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 			);
 			path = "AppleDev-MC1";
+			sourceTree = "<group>";
+		};
+		F7E08992244061EC00C500C5 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				F7E0898E244061DB00C500C5 /* fireloop.mp3 */,
+				F7E08990244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		F7E089932440710D00C500C5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F7E08986243F8EE300C500C5 /* OnboardViewController.swift */,
+				F7E08988243F8FE900C500C5 /* OnboardSwipingController.swift */,
+				F7E0898A2440535D00C500C5 /* PageCell.swift */,
+				F7E0898C24405BE300C500C5 /* Page.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +239,8 @@
 				442E1FC8243DED060068AAAA /* SettingsAmbienceVC.xib in Resources */,
 				44FC0E71243C63EF000E450B /* LaunchScreen.storyboard in Resources */,
 				44FC0E6E243C63EF000E450B /* Assets.xcassets in Resources */,
+				F7E08991244061E400C500C5 /* Cyberpunk Ambience - Apartment View (loop + music).mp3 in Resources */,
+				F7E0898F244061DB00C500C5 /* fireloop.mp3 in Resources */,
 				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
@@ -234,6 +271,11 @@
 				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
+				F7E0898B2440535D00C500C5 /* PageCell.swift in Sources */,
+				F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */,
+				F7E0898D24405BE300C500C5 /* Page.swift in Sources */,
+				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
+				F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */,
 				441B8DE3243DA4BB0042BA01 /* SettingsVC.swift in Sources */,
 				4450021E24406AFB00445BCF /* AmbienceList.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
