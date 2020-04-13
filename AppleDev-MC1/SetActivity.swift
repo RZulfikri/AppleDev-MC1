@@ -16,17 +16,31 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var activityLabel: UILabel!
     
-    var i = 0
+    @IBOutlet var startActivityButton: RoundButton!
+    @IBOutlet var durationPicker: UIPickerView!
+    
+    @IBOutlet var containerActivity: UIView!
+    @IBOutlet var containerDuration: UIView!
+    
+    var selectedActivityIndex = 0
+    var selectedAmbienceIndex = 0
     var slides:[Slide] = []
     var activity:[String] = globalActivities.arrActivities
     var musicPlayer: AVAudioPlayer?
+    var durationModelPicker: DurationModelPicker!
+    var rotationAngle: CGFloat!
+    var selectedDuration: Int = 0
 
     var nowHistory = History()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // hide duration picker first
+        containerDuration.isHidden = true
+        
         setupScrollView()
+        setupPicker()
     }
     
     func setupScrollView() {
@@ -39,8 +53,27 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = 0
         view.bringSubviewToFront(pageControl)
         
-        setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: 0).audioName!)
+        setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).audioName!)
     }
+    
+    // Setup Duration Picker
+    func setupPicker() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getSelectedDuration), name: Notification.Name("pickedDuration"), object: nil)
+        
+        rotationAngle = -90 * (.pi / 180)
+        
+        durationModelPicker = DurationModelPicker()
+        durationModelPicker.modelData = ListOfDurations.getData()
+        
+        let height = durationPicker.frame.origin.y
+        durationPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        durationPicker.frame = CGRect(x: -100, y: height, width: view.frame.width + 200, height: 100)
+
+        durationPicker.delegate = durationModelPicker
+        durationPicker.dataSource = durationModelPicker
+    }
+    
     
     // Setup Music Player
     func setupMusicPlayer(songTitle: String) {
@@ -65,29 +98,51 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     @IBAction func PrevNextButton(_ sender: UIButton) {
         switch sender {
         case nextButton:
-            i += 1
-            if (i >= globalActivities.getCount()) {
-                i = 0
+            selectedActivityIndex += 1
+            if (selectedActivityIndex >= globalActivities.getCount()) {
+                selectedActivityIndex = 0
             }
-            activityLabel.text = globalActivities.getItemAt(index: i)
+            activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         case prevButton:
-            i -= 1
-            if (i <= 0) {
-                i = globalActivities.getCount() - 1
+            selectedActivityIndex -= 1
+            if (selectedActivityIndex <= 0) {
+                selectedActivityIndex = globalActivities.getCount() - 1
             }
-            activityLabel.text = globalActivities.getItemAt(index: i)
+            activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         default:
             activityLabel.text = globalActivities.getItemAt(index: 0)
         }
     }
     
+    @objc func getSelectedDuration() {
+       let indexSelectedDuration = durationPicker.selectedRow(inComponent: 0)
 
+        
+        let tempSelectedDuration = durationModelPicker.modelData[indexSelectedDuration]
+        
+        selectedDuration = Int(tempSelectedDuration.duration)!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let flipToStartVC = segue.description as? FlipToStartVC {
+            flipToStartVC.nowHistory = History(ambienceId: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).id, activityName: globalActivities.getItemAt(index: selectedActivityIndex), date: Date(), duration: selectedDuration, isComplete: false)
+        }
+    }
+    
+    @IBAction func onPressStart(_ sender: UIButton) {
+        performSegue(withIdentifier: "navToFlip", sender: self)
+    }
+    
+    @IBAction func onPressPickDuration(_ sender: UIButton) {
+        containerActivity.isHidden = true
+        containerDuration.isHidden = false
+    }
+    
    // Image Carousel Content
     func createSlides() -> [Slide] {
         var arrSlide: [Slide] = []
         
         for ambience in globalAmbiences.getSelectedAmbiences() {
-            print(ambience)
             let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
             slide.imageView.image = UIImage(named: ambience.imageName)
             arrSlide.append(slide)
@@ -143,6 +198,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
              slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
          }
          
+        selectedAmbienceIndex = Int(pageIndex)
         setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: Int(pageIndex)).audioName!)
      }
 }

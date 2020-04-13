@@ -29,6 +29,7 @@ class FlipToStartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        print(nowHistory)
     }
     
     func startFocus(){
