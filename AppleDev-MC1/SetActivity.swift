@@ -52,9 +52,15 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
         switch sender {
         case NextButton:
             i += 1
+            if (i >= activity.count) {
+                i = 0
+            }
             ActivityLabel.text = activity[i]
         case PrevButton:
-            i += 1
+            i -= 1
+            if (i <= 0) {
+                i = activity.count - 1
+            }
             ActivityLabel.text = activity[i]
         default:
             ActivityLabel.text = activity[0]
@@ -62,9 +68,9 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     }
     
     
-    override func prepare(for segue: ActivityToDuration, sender: Any?) {
-        var nowHistory = History(ambienceId: globalAmbiences.getAmbienceAt(index: PageControl.currentPage).id, activityName: activity[i], duration: <#T##Int?#>, isComplete: <#T##Bool#>)
-    }
+//    override func prepare(for segue: ActivityToDuration, sender: Any?) {
+//        var nowHistory = History(ambienceId: globalAmbiences.getAmbienceAt(index: PageControl.currentPage).id, activityName: activity[i], duration: <#T##Int?#>, isComplete: <#T##Bool#>)
+//    }
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
