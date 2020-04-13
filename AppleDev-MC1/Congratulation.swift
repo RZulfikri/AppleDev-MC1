@@ -28,5 +28,8 @@ class Congratulation: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func onPressBackToMain(_ sender: UIButton) {
+ self.performSegue(withIdentifier: "unwindToSetActivity", sender: self)
+    }
+    
 }

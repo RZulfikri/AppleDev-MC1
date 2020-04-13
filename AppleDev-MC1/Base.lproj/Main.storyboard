@@ -117,6 +117,7 @@
                         <outletCollection property="infoLbl" destination="bWd-Ee-Jeu" collectionClass="NSMutableArray" id="6O8-IE-e6j"/>
                         <outletCollection property="infoLbl" destination="csm-Ez-cJy" collectionClass="NSMutableArray" id="nJz-RG-sKU"/>
                         <segue destination="v25-Ui-otJ" kind="unwind" identifier="unwindToSetActivity" unwindAction="unwindToSetActivity:" id="Xxl-RO-Vks"/>
+                        <segue destination="czn-iE-4gm" kind="show" identifier="navToCongrat" id="lHB-gk-KG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -245,6 +246,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPressBackToMain:" destination="czn-iE-4gm" eventType="touchDown" id="won-tq-ogD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -254,11 +258,13 @@
                     <connections>
                         <outlet property="BackToFocusButton" destination="maU-xy-CTt" id="LAk-gV-eKW"/>
                         <outlet property="CongratsLabel" destination="5yd-yA-h34" id="p1s-pA-rem"/>
+                        <segue destination="2J4-xL-Vn0" kind="unwind" identifier="unwindToSetActivity" unwindAction="unwindToSetActivity:" id="ulh-Wc-jye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMc-6s-y9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2J4-xL-Vn0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2329" y="1716"/>
+            <point key="canvasLocation" x="3265" y="875"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="fyv-8O-Xwx">
@@ -467,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoH-DS-lJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2331.8840579710145" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2330.434782608696" y="124.55357142857142"/>
         </scene>
         <!--Onboard Swiping Controller-->
         <scene sceneID="lnO-ZT-dw3">
