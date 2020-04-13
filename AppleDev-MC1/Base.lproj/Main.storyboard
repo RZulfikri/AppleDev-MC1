@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="702-GN-hfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KBN-Pj-0D1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -470,21 +470,109 @@
             </objects>
             <point key="canvasLocation" x="2330.434782608696" y="124.55357142857142"/>
         </scene>
-        <!--Onboard Swiping Controller-->
+        <!--New Onboard View Controller-->
         <scene sceneID="lnO-ZT-dw3">
             <objects>
-                <viewController storyboardIdentifier="OnboardSwipingController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFV-OA-dme" customClass="OnboardSwipingController" customModule="AppleDev_MC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardSwipingController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFV-OA-dme" customClass="NewOnboardViewController" customModule="AppleDev_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ppI-bP-6hC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onBoard_02" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-dP-4By">
+                                <rect key="frame" x="0.0" y="248" width="414" height="302"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="7HV-5S-VE0">
+                                <rect key="frame" x="20" y="825" width="375" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yv-26-buw">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="37"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="PREV"/>
+                                        <connections>
+                                            <action selector="prevButtonTapped:" destination="vFV-OA-dme" eventType="touchUpInside" id="jw2-xR-BM5"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kmT-pm-TeM">
+                                        <rect key="frame" x="167" y="0.0" width="41" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDx-83-TCe">
+                                        <rect key="frame" x="334" y="0.0" width="41" height="37"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="NEXT"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="vFV-OA-dme" eventType="touchUpInside" id="4Lx-XU-cbD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="6rF-6W-K9d"/>
+                                    <constraint firstAttribute="width" constant="375" id="ddH-db-7cM"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVi-Gx-Yjv">
+                                <rect key="frame" x="354" y="44" width="35" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SKIP"/>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="vFV-OA-dme" eventType="touchUpInside" id="zDf-FB-HG2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Your Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmJ-Ho-Dgn">
+                                <rect key="frame" x="20" y="558" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="History page let you track your progression. Reflect your day, or even your week with only one tap!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-4r-u3S">
+                                <rect key="frame" x="48" y="586" width="318" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="oDS-g0-OKS"/>
+                                    <constraint firstAttribute="height" constant="64" id="y3X-Ls-FmL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7HV-5S-VE0" firstAttribute="bottom" secondItem="xoJ-4S-8IW" secondAttribute="bottom" id="A3b-89-8aH"/>
+                            <constraint firstItem="7HV-5S-VE0" firstAttribute="top" secondItem="kQF-dP-4By" secondAttribute="bottom" constant="275" id="AGX-qe-io9"/>
+                            <constraint firstItem="xmJ-Ho-Dgn" firstAttribute="leading" secondItem="xoJ-4S-8IW" secondAttribute="leading" constant="20" id="Dag-B5-tvz"/>
+                            <constraint firstItem="7HV-5S-VE0" firstAttribute="top" secondItem="kQF-dP-4By" secondAttribute="bottom" constant="275" id="Thd-g0-Mcm"/>
+                            <constraint firstItem="xoJ-4S-8IW" firstAttribute="trailing" secondItem="RVc-4r-u3S" secondAttribute="trailing" constant="48" id="UCA-lK-QBX"/>
+                            <constraint firstItem="7HV-5S-VE0" firstAttribute="leading" secondItem="xoJ-4S-8IW" secondAttribute="leading" constant="20" id="Veg-aT-Vb9"/>
+                            <constraint firstItem="xoJ-4S-8IW" firstAttribute="trailing" secondItem="7HV-5S-VE0" secondAttribute="trailing" constant="19" id="YY1-G3-9VK"/>
+                            <constraint firstItem="xoJ-4S-8IW" firstAttribute="trailing" secondItem="xmJ-Ho-Dgn" secondAttribute="trailing" constant="20" id="ahI-dU-NDU"/>
+                            <constraint firstItem="7HV-5S-VE0" firstAttribute="bottom" secondItem="xoJ-4S-8IW" secondAttribute="bottom" id="alq-b2-0Rx"/>
+                            <constraint firstItem="kQF-dP-4By" firstAttribute="trailing" secondItem="xoJ-4S-8IW" secondAttribute="trailing" id="cw1-9x-xAB"/>
+                            <constraint firstItem="vVi-Gx-Yjv" firstAttribute="top" secondItem="xoJ-4S-8IW" secondAttribute="top" id="dVA-27-2V4"/>
+                            <constraint firstItem="kQF-dP-4By" firstAttribute="leading" secondItem="xoJ-4S-8IW" secondAttribute="leading" id="poP-h5-0gF"/>
+                            <constraint firstItem="xmJ-Ho-Dgn" firstAttribute="top" secondItem="kQF-dP-4By" secondAttribute="bottom" constant="8" id="qDG-ZV-POD"/>
+                            <constraint firstItem="RVc-4r-u3S" firstAttribute="leading" secondItem="xoJ-4S-8IW" secondAttribute="leading" constant="48" id="qTR-Pb-fHd"/>
+                            <constraint firstItem="RVc-4r-u3S" firstAttribute="top" secondItem="xmJ-Ho-Dgn" secondAttribute="bottom" constant="4" id="rZm-fT-o4D"/>
+                            <constraint firstItem="kQF-dP-4By" firstAttribute="top" secondItem="vVi-Gx-Yjv" secondAttribute="bottom" constant="174" id="vdD-u9-hJb"/>
+                            <constraint firstItem="xoJ-4S-8IW" firstAttribute="trailing" secondItem="vVi-Gx-Yjv" secondAttribute="trailing" constant="25" id="yxg-io-6Xe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xoJ-4S-8IW"/>
                     </view>
                     <navigationItem key="navigationItem" id="XDa-bI-b4e"/>
+                    <connections>
+                        <outlet property="bodyText" destination="RVc-4r-u3S" id="ZoP-NQ-Q58"/>
+                        <outlet property="headingText" destination="xmJ-Ho-Dgn" id="odK-YW-4pq"/>
+                        <outlet property="imageOnboard" destination="kQF-dP-4By" id="jK5-ht-JCn"/>
+                        <outlet property="nextButton" destination="KDx-83-TCe" id="j73-xb-ytT"/>
+                        <outlet property="pageController" destination="kmT-pm-TeM" id="ezN-zX-Qf2"/>
+                        <outlet property="prevButton" destination="3Yv-26-buw" id="Stc-VS-VB7"/>
+                        <outlet property="skipButton" destination="vVi-Gx-Yjv" id="ZdR-oH-zrE"/>
+                        <segue destination="702-GN-hfJ" kind="show" identifier="navToMain" id="h15-JI-O7B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr7-Xx-Adb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1549" y="-790"/>
+            <point key="canvasLocation" x="2457.971014492754" y="-790.17857142857144"/>
         </scene>
         <!--HistoryTVC-->
         <scene sceneID="zAT-TN-QUV">
@@ -550,7 +638,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAq-tP-Mku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818.840579710145" y="-790.17857142857144"/>
+            <point key="canvasLocation" x="3728.985507246377" y="-790.17857142857144"/>
         </scene>
         <!--Home-->
         <scene sceneID="VAI-u5-PfK">
@@ -609,6 +697,23 @@
             </objects>
             <point key="canvasLocation" x="6324.6376811594209" y="136.60714285714286"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kRC-vZ-uMH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="KBN-Pj-0D1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="igj-f6-yG8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vFV-OA-dme" kind="relationship" relationship="rootViewController" id="mFI-vQ-CIp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JpL-2I-mfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1547.8260869565217" y="-790.17857142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Celebrate" width="1230" height="1218"/>
@@ -622,5 +727,6 @@
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="iphoneBack" width="366" height="744"/>
         <image name="iphoneFront" width="366" height="744"/>
+        <image name="onBoard_02" width="414" height="302"/>
     </resources>
 </document>

@@ -56,6 +56,7 @@
 		F7E0898D24405BE300C500C5 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0898C24405BE300C500C5 /* Page.swift */; };
 		F7E0898F244061DB00C500C5 /* Fireloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E0898E244061DB00C500C5 /* Fireloop.mp3 */; };
 		F7E08991244061E400C500C5 /* Cyberpunk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E08990244061E400C500C5 /* Cyberpunk.mp3 */; };
+		F7E108F52444AA04006BC43B /* NewOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E108F42444AA04006BC43B /* NewOnboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		F7E0898C24405BE300C500C5 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F7E0898E244061DB00C500C5 /* Fireloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireloop.mp3; sourceTree = "<group>"; };
 		F7E08990244061E400C500C5 /* Cyberpunk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cyberpunk.mp3; sourceTree = "<group>"; };
+		F7E108F42444AA04006BC43B /* NewOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOnboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		44FC0E63243C63ED000E450B /* AppleDev-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				F7E108F42444AA04006BC43B /* NewOnboardViewController.swift */,
 				F7E089932440710D00C500C5 /* Onboarding */,
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
@@ -335,6 +338,7 @@
 				44016AD124430767000E32BF /* SettingActivitySectionHeader.swift in Sources */,
 				44D22768243F3BFD00A8779B /* ActivityCell.swift in Sources */,
 				440246BD2443584F008B391B /* HistoryList.swift in Sources */,
+				F7E108F52444AA04006BC43B /* NewOnboardViewController.swift in Sources */,
 				44FC0E69243C63ED000E450B /* SetTime.swift in Sources */,
 				44FC0E65243C63ED000E450B /* AppDelegate.swift in Sources */,
 				45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */,
@@ -497,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9S2322R8WG;
+				DEVELOPMENT_TEAM = 65HK39UB3M;
 				INFOPLIST_FILE = "AppleDev-MC1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9S2322R8WG;
+				DEVELOPMENT_TEAM = 65HK39UB3M;
 				INFOPLIST_FILE = "AppleDev-MC1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
