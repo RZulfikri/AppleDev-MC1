@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283236692444219700EE2B1C /* FormatExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283236682444219700EE2B1C /* FormatExt.swift */; };
 		28DDAEA8243C6C0B00F6613B /* Haidar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA7243C6C0B00F6613B /* Haidar.swift */; };
 		28DDAEAA243D739600F6613B /* FlipToStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDAEA9243D739600F6613B /* FlipToStartVC.swift */; };
 		44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283236682444219700EE2B1C /* FormatExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatExt.swift; sourceTree = "<group>"; };
 		28DDAEA7243C6C0B00F6613B /* Haidar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haidar.swift; sourceTree = "<group>"; };
 		28DDAEA9243D739600F6613B /* FlipToStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipToStartVC.swift; sourceTree = "<group>"; };
 		44016AC62442F99D000E32BF /* SettingAmbienceSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAmbienceSectionHeader.swift; sourceTree = "<group>"; };
@@ -173,11 +175,11 @@
 				F7E089932440710D00C500C5 /* Onboarding */,
 				44A8A047243DC63800A87F9A /* Models */,
 				441B8DE8243DBAB70042BA01 /* SettingsContent */,
-				441B8DE2243DA4BB0042BA01 /* SettingsVC.swift */,
 				44FC0E64243C63ED000E450B /* AppDelegate.swift */,
 				44FC0E66243C63ED000E450B /* SceneDelegate.swift */,
 				28DDAEA9243D739600F6613B /* FlipToStartVC.swift */,
 				28DDAEA7243C6C0B00F6613B /* Haidar.swift */,
+				283236682444219700EE2B1C /* FormatExt.swift */,
 				44FC0E68243C63ED000E450B /* SetTime.swift */,
 				45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */,
 				45E61C6D243F3802002A0BF8 /* DataModel.swift */,
@@ -339,6 +341,7 @@
 				F7E08987243F8EE300C500C5 /* OnboardViewController.swift in Sources */,
 				440246BB24435816008B391B /* History.swift in Sources */,
 				F7E0898D24405BE300C500C5 /* Page.swift in Sources */,
+				283236692444219700EE2B1C /* FormatExt.swift in Sources */,
 				44FC0E67243C63ED000E450B /* SceneDelegate.swift in Sources */,
 				F7E08989243F8FE900C500C5 /* OnboardSwipingController.swift in Sources */,
 				44016AC82442F99D000E32BF /* SettingAmbienceSectionHeader.swift in Sources */,

@@ -8,54 +8,152 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class FlipToStartVC: UIViewController {
-    
+    @IBOutlet var infoLbl: [UILabel]!
     @IBOutlet weak var timeLeftLbl: UILabel!
+    @IBOutlet weak var ambienceImg: UIImageView!
+    @IBOutlet weak var swipeInfoImg: UIImageView!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     var motion = CMMotionManager()
-    var timer = Timer()
-    var stats = ""
-    var timeRemaining = 10
+    var focusTimer = Timer()
+    var breakTimer = Timer()
+    var isStart = false
+    var breakTime = 10
+    var timeRemaining = 100
+    var nowHistory = History()
+    var player = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myAccelerometer()
+        initView()
+    }
+    
+    func startFocus(){
         timerStartAct()
-        // Do any additional setup after loading the view.
+        startSound()
+    }
+    
+    func pauseFocus(){
+        cancelBtn.setTitle("Give Up", for: .normal)
+        cancelBtn.titleLabel?.text = "Give Up"
+        timerPauseAct()
+        pauseSound()
+    }
+    
+    func startSound() {
+        player.play()
+    }
+    
+    func pauseSound() {
+        player.pause()
+    }
+    
+    func initView() {
+        activateProximity(true)
+        nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false)
+        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: 2).imageName)
+             //fill it by image name from segue struct
+        timeRemaining = 100 //fill it by duration from segue struct
+        timeLeftLbl.text = "\(format(second: timeRemaining))"
+        
+        do {
+            let audioPath = Bundle.main.path(forResource: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).audioName, ofType: ".mp3")
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        } catch {
+            
+        }
+        player.prepareToPlay()
     }
     
     func timerStartAct(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showTime), userInfo: nil, repeats: true)
+        breakTimer.invalidate()
+        breakTime = 10
+        focusTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showTime), userInfo: nil, repeats: true)
     }
     
     func timerPauseAct(){
-        timer.invalidate()
+        focusTimer.invalidate()
+        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeView), userInfo: nil, repeats: true)
     }
     
     @objc func showTime(){
-        timeRemaining -= 1
-        timeLeftLbl.text = "\(timeRemaining)"
+        if timeRemaining == 0 {
+            completeTask()
+        } else {
+            timeRemaining -= 1
+            timeLeftLbl.text = "\(format(second: timeRemaining))"
+        }
     }
     
-    func myAccelerometer() {
+    @objc func changeView() {
+        if breakTime == 0 {
+            completeTask()
+        } else {
+            breakTime -= 1
+        }
+        infoLbl[0].text = "Turn your phone flipped down" //height 37
+        infoLbl[1].text = "\(breakTime)s" //426
+        infoLbl[2].text = "to continue the activity!" //430
+        
+        infoLbl[0].frame.size.height = 37
+        infoLbl[1].frame.origin.y = 426
+        infoLbl[2].frame.origin.y = 430
+        
+        infoLbl[1].font = infoLbl[1].font.withSize(16)
+        infoLbl[1].textColor = UIColor.systemBlue
+        
+        swipeInfoImg.isHidden = true
+    }
+    
+    func completeTask(){
+        if timeRemaining == 0 {
+            print("complete")
+        } else {
+            print("not")
+        }
+    }
+    
+    func activateProximity(_ stats: Bool) {
+        let device = UIDevice.current
+        device.isProximityMonitoringEnabled = stats
+        if device.isProximityMonitoringEnabled{
+            NotificationCenter.default.addObserver(self, selector: #selector(myAccelerometer), name: nil
+                , object: device)
+        }
+    }
+    
+    @objc func myAccelerometer(notification: NSNotification) {
         motion.accelerometerUpdateInterval = 0.5
+        var isCovered = false
+        if let device = notification.object as? UIDevice{
+            isCovered = device.proximityState
+        }
         motion.startAccelerometerUpdates(to: OperationQueue.current!){(data, error) in
-            print(data as Any)
+//            cek x, y, z data
+//            print(data as Any)
             if let trueData = data {
                 self.view.reloadInputViews()
                 let z = trueData.acceleration.z
-                let stats = Double(z) > 0.9 ? "Kebawah" : "Keatas"
-                self.timeLeftLbl.text = stats
-                if (self.stats != stats){
-                    print(stats)
-                    self.stats = stats
+                let isFaceDown = Double(z) > 0.9 ? true : false
+                let isStart = isFaceDown && isCovered ? true : false
+                if isStart{
+                    if self.isStart != isStart {
+                        self.startFocus()
+                    }
+                } else {
+                    if self.isStart != isStart {
+                        self.pauseFocus()
+                    }
                 }
+                self.isStart = isStart
             }
         }
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
-        
+        completeTask()
     }
 }

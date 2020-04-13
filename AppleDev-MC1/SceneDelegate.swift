@@ -14,27 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-
-            window = UIWindow()
-            window?.windowScene = windowScene
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            let swipingController = OnboardSwipingController(collectionViewLayout: layout)
-            
-            window?.rootViewController = swipingController
-            window?.makeKeyAndVisible()
-        
-        
-        /** CODE TO CHANGE ROOT VIEW BASED ON STORYBOARD **/
-        
-//            let window = UIWindow(windowScene: windowScene)
-//            self.window = window
-//            let mainstoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
-//            let navigationController = UINavigationController(rootViewController: newViewcontroller)
-//            window.rootViewController = navigationController
-//            window.makeKeyAndVisible()
+//            guard let windowScene = (scene as? UIWindowScene) else { return }
+//            window = UIWindow()
+//            window?.windowScene = windowScene
+//            let layout = UICollectionViewFlowLayout()
+//            layout.scrollDirection = .horizontal
+//            let swipingController = OnboardSwipingController(collectionViewLayout: layout)
+//            window?.rootViewController = swipingController
+//            window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
