@@ -11,6 +11,7 @@ import Foundation
 struct History {
     var ambienceId: Int?
     var activityName: String?
+    var date: Date?
     var duration: Int?
     var isComplete: Bool = false
 }

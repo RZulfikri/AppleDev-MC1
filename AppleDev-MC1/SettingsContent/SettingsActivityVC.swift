@@ -59,12 +59,33 @@ class SettingsActivityVC: UIViewController, UITableViewDelegate, UITableViewData
         nil
     }
     
+    func showAlert() {
+       //Creating UIAlertController and
+       //Setting title and message for the alert dialog
+       let alertController = UIAlertController(title: "Alert!!", message: "You must select at least one ambience", preferredStyle: .alert)
+       
+       //the confirm action taking the inputs
+       let confirmAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+       }
+       
+       //adding the action to dialogbox
+       alertController.addAction(confirmAction)
+       
+       //finally presenting the dialog box
+       self.present(alertController, animated: true, completion: nil)
+   }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
            if editingStyle == .delete {
 
-            globalActivities.removeActivity(index: indexPath.row)
-               tableView.deleteRows(at: [indexPath], with: .fade)
+            if globalActivities.getCount() <= 1 {
+                showAlert()
+            } else {
+                globalActivities.removeActivity(index: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+           
 
            } else if editingStyle == .insert {
                // Not used in our example, but if you were adding a new row, this is where you would do it.
