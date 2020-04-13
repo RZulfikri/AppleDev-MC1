@@ -28,8 +28,12 @@ class FlipToStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesBottomBarWhenPushed = true
+        
         initView()
     }
+    
+    
     
     func startFocus(){
         timerStartAct()
@@ -54,9 +58,8 @@ class FlipToStartVC: UIViewController {
     func initView() {
         activateProximity(true)
         nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false)
-        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: 2).imageName)
-             //fill it by image name from segue struct
-        timeRemaining = 100 //fill it by duration from segue struct
+        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).imageName)
+        timeRemaining = nowHistory.duration! * 60
         timeLeftLbl.text = "\(format(second: timeRemaining))"
         
         do {
@@ -110,9 +113,11 @@ class FlipToStartVC: UIViewController {
     
     func completeTask(){
         if timeRemaining == 0 {
-            print("complete")
+//            print("complete")
+            performSegue(withIdentifier: "navToCongrat", sender: self)
         } else {
-            print("not")
+//            print("not")
+            showFailureConfirmation()
         }
     }
     
@@ -123,6 +128,44 @@ class FlipToStartVC: UIViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(myAccelerometer), name: nil
                 , object: device)
         }
+    }
+    
+    func showCancelConfirmation() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Cancel Activity", message: "Are ayou sure want to cancel this activity?", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.performSegue(withIdentifier: "unwindToSetActivity", sender: self)
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "No", style: .cancel) { (_) in }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showFailureConfirmation() {
+    //Creating UIAlertController and
+    //Setting title and message for the alert dialog
+    let alertController = UIAlertController(title: "Activity Alert", message: "You failed to complete the activity, try again?", preferredStyle: .alert)
+    
+    //the confirm action taking the inputs
+    let confirmAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+        self.performSegue(withIdentifier: "unwindToSetActivity", sender: self)
+    }
+    
+    //adding the action to dialogbox
+    alertController.addAction(confirmAction)
+    
+    //finally presenting the dialog box
+    self.present(alertController, animated: true, completion: nil)
     }
     
     @objc func myAccelerometer(notification: NSNotification) {
@@ -154,6 +197,8 @@ class FlipToStartVC: UIViewController {
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
-        completeTask()
+//        showCancelConfirmation()
+        performSegue(withIdentifier: "navToCongrat", sender: self)
     }
+    
 }

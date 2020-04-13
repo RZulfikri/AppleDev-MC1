@@ -38,7 +38,6 @@
 		45E61C6A243F3765002A0BF8 /* DurationModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */; };
 		45E61C6C243F3798002A0BF8 /* ListOfDurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */; };
 		45E61C6E243F3802002A0BF8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E61C6D243F3802002A0BF8 /* DataModel.swift */; };
-		45E61C7424435D83002A0BF8 /* Forest 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */; };
 		45E61C7524435D83002A0BF8 /* Coffee Shop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */; };
 		45E61C7624435D83002A0BF8 /* Thuderstorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */; };
 		45E61C7724435D83002A0BF8 /* Campfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E61C7224435D83002A0BF8 /* Campfire.mp3 */; };
@@ -92,7 +91,7 @@
 		45E61C69243F3765002A0BF8 /* DurationModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModelPicker.swift; sourceTree = "<group>"; };
 		45E61C6B243F3798002A0BF8 /* ListOfDurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfDurations.swift; sourceTree = "<group>"; };
 		45E61C6D243F3802002A0BF8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Forest 1.mp3"; path = "15 Free Ambient Sound Effects/Forest 1.mp3"; sourceTree = SOURCE_ROOT; };
+		45E61C6F24435D83002A0BF8 /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Forest.mp3; path = "15 Free Ambient Sound Effects/Forest.mp3"; sourceTree = SOURCE_ROOT; };
 		45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Coffee Shop.mp3"; path = "15 Free Ambient Sound Effects/Coffee Shop.mp3"; sourceTree = SOURCE_ROOT; };
 		45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Thuderstorm.mp3; path = "15 Free Ambient Sound Effects/Thuderstorm.mp3"; sourceTree = SOURCE_ROOT; };
 		45E61C7224435D83002A0BF8 /* Campfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Campfire.mp3; path = "15 Free Ambient Sound Effects/Campfire.mp3"; sourceTree = SOURCE_ROOT; };
@@ -192,7 +191,7 @@
 				490F023D243F498C003B9737 /* MusicPlayer.swift */,
 				45E61C7224435D83002A0BF8 /* Campfire.mp3 */,
 				45E61C7024435D83002A0BF8 /* Coffee Shop.mp3 */,
-				45E61C6F24435D83002A0BF8 /* Forest 1.mp3 */,
+				45E61C6F24435D83002A0BF8 /* Forest.mp3 */,
 				45E61C7324435D83002A0BF8 /* Ocean Waves.mp3 */,
 				45E61C7124435D83002A0BF8 /* Thuderstorm.mp3 */,
 				4984E60A243C79E800EB2B8C /* RoundButton.swift */,
@@ -296,7 +295,6 @@
 				442E1FC4243DECF50068AAAA /* SettingsActivityVC.xib in Resources */,
 				44FC0E6C243C63ED000E450B /* Main.storyboard in Resources */,
 				44A8A044243DC1F500A87F9A /* AmbienceCell.xib in Resources */,
-				45E61C7424435D83002A0BF8 /* Forest 1.mp3 in Resources */,
 				45E61C7824435D83002A0BF8 /* Ocean Waves.mp3 in Resources */,
 				44016AC92442F99D000E32BF /* SettingAmbienceSectionHeader.xib in Resources */,
 				F7E08991244061E400C500C5 /* Cyberpunk.mp3 in Resources */,

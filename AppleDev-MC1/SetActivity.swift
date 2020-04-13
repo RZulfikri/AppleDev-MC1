@@ -9,134 +9,215 @@
 import UIKit
 import AVFoundation
 class SetActivity: UIViewController, UIScrollViewDelegate {
-    @IBOutlet weak var ScrollView: UIScrollView!
-    @IBOutlet weak var PageControl: UIPageControl!
-    @IBOutlet weak var PickDuration: RoundButton!
-    @IBOutlet weak var NextButton: UIButton!
-    @IBOutlet weak var PrevButton: UIButton!
-    @IBOutlet weak var ActivityLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pickDuration: RoundButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var activityLabel: UILabel!
     
-    var i = 0
+    @IBOutlet var startActivityButton: RoundButton!
+    @IBOutlet var durationPicker: UIPickerView!
+    
+    @IBOutlet var containerActivity: UIView!
+    @IBOutlet var containerDuration: UIView!
+    
+    var selectedActivityIndex = 0
+    var selectedAmbienceIndex = 0
     var slides:[Slide] = []
     var activity:[String] = globalActivities.arrActivities
-    var player: AVAudioPlayer = AVAudioPlayer()
+    var musicPlayer: AVAudioPlayer?
+    var durationModelPicker: DurationModelPicker!
+    var rotationAngle: CGFloat!
+    var selectedDuration: Int = 0
+
     var nowHistory = History()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setup()
+    }
+    
+    func setup() {
+        // hide duration picker first
+        containerActivity.isHidden = false
+        containerDuration.isHidden = true
         
-        ScrollView.delegate = self
+        setupScrollView()
+        setupPicker()
+    }
+    
+    func setupScrollView() {
+        scrollView.delegate = self
         
         slides = createSlides()
         setupSlideScrollView(slides: slides)
         
-        PageControl.numberOfPages = slides.count
-        PageControl.currentPage = 0
-        view.bringSubviewToFront(PageControl)
+        pageControl.numberOfPages = slides.count
+        pageControl.currentPage = 0
+        view.bringSubviewToFront(pageControl)
         
-        do{
-            let audioPath = Bundle.main.path(forResource: globalAmbiences.getAmbienceAt(index: PageControl.currentPage).audioName, ofType: ".mp3")
-            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
-        }
-        catch{
-            //ERROR
-        }
-        player.play()
-        player.numberOfLoops = -1
-        
+        setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).audioName!)
     }
+    
+    // Setup Duration Picker
+    func setupPicker() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getSelectedDuration), name: Notification.Name("pickedDuration"), object: nil)
+        
+        rotationAngle = -90 * (.pi / 180)
+        
+        durationModelPicker = DurationModelPicker()
+        durationModelPicker.modelData = ListOfDurations.getData()
+        
+        let height = durationPicker.frame.origin.y
+        durationPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        durationPicker.frame = CGRect(x: -100, y: height, width: view.frame.width + 200, height: 100)
+
+        durationPicker.delegate = durationModelPicker
+        durationPicker.dataSource = durationModelPicker
+    }
+    
+    
+    // Setup Music Player
+    func setupMusicPlayer(songTitle: String) {
+        let path = Bundle.main.path(forResource: "\(songTitle).mp3", ofType: nil)
+        let url = URL(fileURLWithPath: path!)
+        
+        if ((musicPlayer?.isPlaying) != nil) {
+            musicPlayer?.stop()
+        }
+        
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer?.play()
+        } catch  {
+            //Error
+            print("MUSIC PLAYER ERROR")
+        }
+    }
+    
     
     
     @IBAction func PrevNextButton(_ sender: UIButton) {
-        
         switch sender {
-        case NextButton:
-            i += 1
-            ActivityLabel.text = activity[i]
-        case PrevButton:
-            i += 1
-            ActivityLabel.text = activity[i]
+        case nextButton:
+            selectedActivityIndex += 1
+            if (selectedActivityIndex >= globalActivities.getCount()) {
+                selectedActivityIndex = 0
+            }
+            activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
+        case prevButton:
+            selectedActivityIndex -= 1
+            if (selectedActivityIndex <= 0) {
+                selectedActivityIndex = globalActivities.getCount() - 1
+            }
+            activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         default:
-            ActivityLabel.text = activity[0]
+            activityLabel.text = globalActivities.getItemAt(index: 0)
         }
     }
     
-    
-    override func prepare(for segue: ActivityToDuration, sender: Any?) {
-        var nowHistory = History(ambienceId: globalAmbiences.getAmbienceAt(index: PageControl.currentPage).id, activityName: activity[i], duration: <#T##Int?#>, isComplete: <#T##Bool#>)
+    @objc func getSelectedDuration() {
+       let indexSelectedDuration = durationPicker.selectedRow(inComponent: 0)
+
+        
+        let tempSelectedDuration = durationModelPicker.modelData[indexSelectedDuration]
+        
+        selectedDuration = Int(tempSelectedDuration.duration)!
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "navToFlip") {
+            if let flipToStartVC = segue.destination as? FlipToStartVC {
+                flipToStartVC.nowHistory = History(ambienceId: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).id, activityName: globalActivities.getItemAt(index: selectedActivityIndex), date: Date(), duration: selectedDuration, isComplete: false)
+                flipToStartVC.hidesBottomBarWhenPushed = true
+            }
+        }
+    }
+    
+    @IBAction func unwindToSetActivity(_ unwindSegue: UIStoryboardSegue) {
+//        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        setup()
+    }
+    
+    @IBAction func onPressStart(_ sender: UIButton) {
+        performSegue(withIdentifier: "navToFlip", sender: self)
+    }
+    
+    @IBAction func onPressPickDuration(_ sender: UIButton) {
+        containerActivity.isHidden = true
+        containerDuration.isHidden = false
+    }
+    
+   // Image Carousel Content
     func createSlides() -> [Slide] {
+        var arrSlide: [Slide] = []
         
-        let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide1.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:0).imageName)
-        
-        let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide2.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:1).imageName)
-        
-        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:2).imageName)
-        
-        let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide4.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:3).imageName)
-        
-        let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide5.imageView.image = UIImage(named: globalAmbiences.getAmbienceAt(index:4).imageName)
-        
-        return [slide1, slide2, slide3, slide4, slide5]
+        for ambience in globalAmbiences.getSelectedAmbiences() {
+            let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+            slide.imageView.image = UIImage(named: ambience.imageName)
+            arrSlide.append(slide)
+        }
+ 
+        return arrSlide
     }
     
-    func setupSlideScrollView(slides : [Slide]) {
-        ScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        ScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
-        ScrollView.isPagingEnabled = true
-        
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
-            ScrollView.addSubview(slides[i])
-        }
-    }
+    // Setup Side Scroll
+     func setupSlideScrollView(slides : [Slide]) {
+         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+         scrollView.isPagingEnabled = true
+         
+         for i in 0 ..< slides.count {
+             slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+             scrollView.addSubview(slides[i])
+         }
+     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        PageControl.currentPage = Int(pageIndex)
-        
-        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-        
-        // vertical
-        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-        
-        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-        
-        
-        /*
-         * below code changes the background color of view on paging the scrollview
-         */
-        //        self.scrollView(scrollView, didScrollToPercentageOffset: percentageHorizontalOffset)
-        
-        
-        /*
-         * below code scales the imageview on paging the scrollview
-         */
-        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-        
-        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-            
-            slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-            slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-            
-        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-            slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-            slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-            
-        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-            slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-            slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-            
-        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-            slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-            slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-        }
-    }}
+       // Connect Music to background & Slide
+      func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
+         pageControl.currentPage = Int(pageIndex)
+             
+         let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
+         let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
+             
+         // Vertical
+         let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+         let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
+             
+         let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
+         let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+         
+         //Scales the imageview on paging the scrollview
+         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
+             
+         if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+             slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
+             slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
+                 
+         } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
+             slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
+             slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
+                 
+         } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
+             slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
+             slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
+                 
+         } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
+             slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
+             slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
+         }
+         
+        selectedAmbienceIndex = Int(pageIndex)
+        setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: Int(pageIndex)).audioName!)
+     }
+}
