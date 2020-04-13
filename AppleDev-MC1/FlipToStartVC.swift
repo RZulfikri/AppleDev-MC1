@@ -129,6 +129,27 @@ class FlipToStartVC: UIViewController {
         }
     }
     
+    func showCancelConfirmation() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Cancel Activity", message: "Are ayou sure want to cancel this activity?", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.performSegue(withIdentifier: "unwindToSetActivity", sender: self)
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "No", style: .cancel) { (_) in }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @objc func myAccelerometer(notification: NSNotification) {
         motion.accelerometerUpdateInterval = 0.5
         var isCovered = false
@@ -158,8 +179,7 @@ class FlipToStartVC: UIViewController {
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
-        performSegue(withIdentifier: "unwindToSetActivity", sender: self)
-        completeTask()
+        showCancelConfirmation()
     }
     
 }
