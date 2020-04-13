@@ -54,6 +54,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         // hide duration picker first
         containerActivity.isHidden = false
         containerDuration.isHidden = true
+        activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         
         setupScrollView()
         setupPicker()
@@ -230,12 +231,11 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
      }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("DID SELECT TAB \(viewController)")
         if let nc = viewController as? UINavigationController {
             let activity = nc.viewControllers[0]
-            if let settingActivity = activity as? SettingsVC {
-                print("SETTING ACTIVITY")
-            }
+//            if let settingActivity = activity as? SettingsVC {
+//                print("SETTING ACTIVITY")
+//            }
             
             if let activity = activity as? SetActivity {
                 activity.setup()
