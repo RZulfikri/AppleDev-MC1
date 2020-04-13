@@ -130,6 +130,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         
         do {
             musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer?.numberOfLoops = -1
             musicPlayer?.play()
         } catch  {
             //Error
@@ -183,6 +184,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
     }
     
     @IBAction func onPressStart(_ sender: UIButton) {
+        musicPlayer?.stop()
         performSegue(withIdentifier: "navToFlip", sender: self)
     }
     
