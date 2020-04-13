@@ -43,4 +43,4 @@ class ActivityList {
 }
 
 
-let globalActivities = ActivityList.init(arrActivities: ["Working", "Hobby", "Study", "Sleaping", "Playing Games"])
+let globalActivities = ActivityList.init(arrActivities: ["Working", "Hobby", "Study", "Sleeping", "Playing Games"])
