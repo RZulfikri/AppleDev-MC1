@@ -208,4 +208,14 @@ class FlipToStartVC: UIViewController {
         showCancelConfirmation()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            if identifier == "unwindToSetActivity" {
+                if let dest = segue.destination as? SetActivity{
+                    dest.selectedDuration = nowHistory.duration!
+                }
+            }
+        }
+    }
+    
 }

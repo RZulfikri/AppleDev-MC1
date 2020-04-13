@@ -49,7 +49,10 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         selectedActivityIndex = 0
         selectedAmbienceIndex = 0
         slides = []
-        selectedDuration = 0
+        
+        if selectedDuration == 0 {
+            selectedDuration = 1
+        }
         
         // hide duration picker first
         containerActivity.isHidden = false
