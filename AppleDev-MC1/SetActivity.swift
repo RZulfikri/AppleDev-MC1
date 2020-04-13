@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-class SetActivity: UIViewController, UIScrollViewDelegate {
+class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var pickDuration: RoundButton!
@@ -26,7 +26,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     var selectedAmbienceIndex = 0
     var slides:[Slide] = []
     var activity:[String] = globalActivities.arrActivities
-    var musicPlayer: AVAudioPlayer?
+    var musicPlayer: AVAudioPlayer!
     var durationModelPicker: DurationModelPicker!
     var rotationAngle: CGFloat!
     var selectedDuration: Int = 0
@@ -41,10 +41,16 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.tabBarController?.delegate = self
         setup()
     }
     
     func setup() {
+        selectedActivityIndex = 0
+        selectedAmbienceIndex = 0
+        slides = []
+        selectedDuration = 0
+        
         // hide duration picker first
         containerActivity.isHidden = false
         containerDuration.isHidden = true
@@ -164,6 +170,8 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
         for ambience in globalAmbiences.getSelectedAmbiences() {
             let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
             slide.imageView.image = UIImage(named: ambience.imageName)
+            slide.imageView.contentMode = .scaleAspectFill
+            slide.imageView.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
             arrSlide.append(slide)
         }
  
@@ -172,13 +180,12 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     
     // Setup Side Scroll
      func setupSlideScrollView(slides : [Slide]) {
-         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(slides.count), height: scrollView.frame.height)
          scrollView.isPagingEnabled = true
          
          for i in 0 ..< slides.count {
-             slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
-             scrollView.addSubview(slides[i])
+            slides[i].frame = CGRect(x: scrollView.frame.width * CGFloat(i), y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+            scrollView.addSubview(slides[i])
          }
      }
     
@@ -199,25 +206,41 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
          
          //Scales the imageview on paging the scrollview
          let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-             
-         if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-             slides[0].imageView.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-             slides[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-                 
-         } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-             slides[1].imageView.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-             slides[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-                 
-         } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-             slides[2].imageView.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-             slides[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-                 
-         } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-             slides[3].imageView.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-             slides[4].imageView.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-         }
-         
+        
+        let itemLengthInPercent: CGFloat = CGFloat(1.0 / CGFloat(globalAmbiences.getAmbienceList().count - 1))
+        
+        for i in 0 ..< globalAmbiences.getAmbienceList().count - 1 {
+            let min = itemLengthInPercent * CGFloat(i)
+            let max = itemLengthInPercent * CGFloat(CGFloat(i) + 1.0)
+            if (percentOffset.x > CGFloat(min) && percentOffset.y <= CGFloat(max)) {
+                let firstScaleX = (max-percentOffset.x)/itemLengthInPercent
+                let firstScaleY = 0.0
+                let secondScaleX = percentOffset.x/max
+                let secondScaleY = 0.0
+                slides[i].imageView.transform = CGAffineTransform(translationX: firstScaleX, y: CGFloat(firstScaleY))
+                slides[i + 1].imageView.transform = CGAffineTransform(translationX: secondScaleX, y: CGFloat(secondScaleY))
+            }
+        }
+
         selectedAmbienceIndex = Int(pageIndex)
         setupMusicPlayer(songTitle: globalAmbiences.getSelectedAmbienceIndexAt(index: Int(pageIndex)).audioName!)
      }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("DID SELECT TAB \(viewController)")
+        if let nc = viewController as? UINavigationController {
+            let activity = nc.viewControllers[0]
+            if let settingActivity = activity as? SettingsVC {
+                print("SETTING ACTIVITY")
+            }
+            
+            if let activity = activity as? SetActivity {
+                activity.setup()
+            }
+            
+            if let history = activity as? HistoryTVC {
+                history.tableView.reloadData()
+            }
+        }
+    }
 }

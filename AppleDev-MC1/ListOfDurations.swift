@@ -13,7 +13,7 @@ class ListOfDurations {
     class func getData() -> [DataModel] {
         var data = [DataModel]()
         
-        data.append(DataModel(duration: "0"))
+        data.append(DataModel(duration: "1"))
         data.append(DataModel(duration: "5"))
         data.append(DataModel(duration: "10"))
         data.append(DataModel(duration: "15"))

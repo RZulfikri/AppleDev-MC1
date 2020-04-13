@@ -331,11 +331,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-h0-TGC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-h0-TGC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Gfm-Xy-csF"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="JlQ-cZ-If9"/>
                             </scrollView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh5-RJ-TOW">
                                 <rect key="frame" x="0.0" y="531" width="415" height="282"/>
@@ -443,15 +442,11 @@
                         <constraints>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="centerX" secondItem="mAr-Ad-rf4" secondAttribute="centerX" id="2kR-Gh-CV9"/>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="top" secondItem="uVf-Wa-ISb" secondAttribute="top" id="8if-uC-QA9"/>
-                            <constraint firstItem="oh5-RJ-TOW" firstAttribute="leading" secondItem="KaI-h0-TGC" secondAttribute="leading" id="BqE-BV-P3o"/>
                             <constraint firstItem="MJW-90-8Vv" firstAttribute="bottom" secondItem="oh5-RJ-TOW" secondAttribute="bottom" id="DFQ-ZO-yJq"/>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="trailing" secondItem="uVf-Wa-ISb" secondAttribute="trailing" id="F04-c9-LP4"/>
                             <constraint firstItem="MJW-90-8Vv" firstAttribute="bottom" secondItem="oh5-RJ-TOW" secondAttribute="bottom" id="IbX-bN-FM7"/>
                             <constraint firstItem="uVf-Wa-ISb" firstAttribute="bottom" secondItem="MJW-90-8Vv" secondAttribute="bottom" id="L63-wE-Bhb"/>
-                            <constraint firstItem="oh5-RJ-TOW" firstAttribute="trailing" secondItem="KaI-h0-TGC" secondAttribute="trailing" id="MML-d8-jhw"/>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="top" secondItem="mAr-Ad-rf4" secondAttribute="bottom" constant="8" id="TYW-Re-Q0P"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="KaI-h0-TGC" secondAttribute="bottom" constant="-83" id="bdO-Ra-q3u"/>
-                            <constraint firstItem="KaI-h0-TGC" firstAttribute="centerY" secondItem="jEO-fu-I9c" secondAttribute="centerY" id="d3a-zC-AEe"/>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="leading" secondItem="uVf-Wa-ISb" secondAttribute="leading" id="gSn-Hj-IMh"/>
                             <constraint firstItem="oh5-RJ-TOW" firstAttribute="leading" secondItem="MJW-90-8Vv" secondAttribute="leading" id="vYI-HH-Oc2"/>
                         </constraints>
