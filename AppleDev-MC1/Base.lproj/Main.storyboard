@@ -335,6 +335,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
+                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zNE-Ar-9e8">
+                                <rect key="frame" x="0.0" y="531" width="415" height="282"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g6z-No-1kU">
+                                    <rect key="frame" x="0.0" y="0.0" width="415" height="282"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oh5-RJ-TOW">
                                 <rect key="frame" x="0.0" y="531" width="415" height="282"/>
                                 <subviews>
@@ -457,6 +466,7 @@
                         <outlet property="containerActivity" destination="uVf-Wa-ISb" id="4k5-Kl-h99"/>
                         <outlet property="containerDuration" destination="oh5-RJ-TOW" id="vXr-FI-v0M"/>
                         <outlet property="durationPicker" destination="hFg-Hm-3zJ" id="lMl-pG-xG9"/>
+                        <outlet property="effectView" destination="zNE-Ar-9e8" id="9nk-AY-VEQ"/>
                         <outlet property="nextButton" destination="NNw-W4-2Tx" id="Qj1-Uq-17j"/>
                         <outlet property="pageControl" destination="mAr-Ad-rf4" id="QEB-Pi-fw7"/>
                         <outlet property="prevButton" destination="Iip-JL-qdq" id="VmI-uA-DeK"/>

@@ -19,6 +19,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
     @IBOutlet var startActivityButton: RoundButton!
     @IBOutlet var durationPicker: UIPickerView!
     
+    @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet var containerActivity: UIView!
     @IBOutlet var containerDuration: UIView!
     
@@ -70,6 +71,12 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         rectShapeCD.position = self.containerDuration.center
         rectShapeCD.path = UIBezierPath(roundedRect: self.containerDuration.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
         self.containerDuration.layer.mask = rectShapeCD
+        
+        let rectShapeFX = CAShapeLayer()
+        rectShapeFX.bounds = self.effectView.frame
+        rectShapeFX.position = self.effectView.center
+        rectShapeFX.path = UIBezierPath(roundedRect: self.effectView.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
+        self.effectView.layer.mask = rectShapeFX
                 
         activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         
