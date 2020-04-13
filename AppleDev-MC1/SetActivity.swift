@@ -61,6 +61,9 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
     
     func setupScrollView() {
         scrollView.delegate = self
+        scrollView.automaticallyAdjustsScrollIndicatorInsets = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        
         
         slides = createSlides()
         setupSlideScrollView(slides: slides)
