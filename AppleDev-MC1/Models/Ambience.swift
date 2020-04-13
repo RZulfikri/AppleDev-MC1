@@ -12,5 +12,5 @@ struct Ambience {
     var id: Int
     var imageName: String
     var audioName: String?
-    var selected: Bool = false
+    var selected: Bool = true
 }
