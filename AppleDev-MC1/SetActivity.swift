@@ -79,7 +79,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         scrollView.automaticallyAdjustsScrollIndicatorInsets = false
         scrollView.contentInsetAdjustmentBehavior = .never
         
-        scrollView.scrollsToTop = true
+        scrollView.setContentOffset(.zero, animated: true)
         slides = createSlides()
         setupSlideScrollView(slides: slides)
         
