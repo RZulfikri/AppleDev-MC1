@@ -14,7 +14,7 @@ class Congratulation: UIViewController {
     @IBOutlet weak var BackToFocusButton: RoundButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//
 //        CongratsLabel.text = "You have successfully completed your activity of Working for \(minutes) minutes!"
     }
     

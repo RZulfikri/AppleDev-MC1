@@ -44,20 +44,20 @@ class FlipToStartVC: UIViewController {
         cancelBtn.setTitle("Give Up", for: .normal)
         cancelBtn.titleLabel?.text = "Give Up"
         timerPauseAct()
-//        pauseSound()
+        pauseSound()
     }
     
     func startSound() {
         player.play()
-        player.numberOfLoops = -1
     }
     
-//    func pauseSound() {
-//        player.pause()
-//    }
+    func pauseSound() {
+        player.pause()
+    }
     
     func initView() {
         activateProximity(true)
+        nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false)
         ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).imageName)
         timeRemaining = nowHistory.duration! * 60
         timeLeftLbl.text = "\(format(second: timeRemaining))"
@@ -111,22 +111,14 @@ class FlipToStartVC: UIViewController {
         swipeInfoImg.isHidden = true
     }
     
-    func stopFocus(){
-        player.stop()
-        focusTimer.invalidate()
-        breakTimer.invalidate()
-        activateProximity(false)
-    }
-    
     func completeTask(){
         if timeRemaining == 0 {
-            nowHistory.isComplete = true
+//            print("complete")
             performSegue(withIdentifier: "navToCongrat", sender: self)
         } else {
+//            print("not")
             showFailureConfirmation()
         }
-        stopFocus()
-        globalHistory.addHistory(history: nowHistory)        
     }
     
     func activateProximity(_ stats: Bool) {
@@ -205,7 +197,8 @@ class FlipToStartVC: UIViewController {
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
-        showCancelConfirmation()
+//        showCancelConfirmation()
+        performSegue(withIdentifier: "navToCongrat", sender: self)
     }
     
 }
