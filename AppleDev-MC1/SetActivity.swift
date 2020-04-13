@@ -32,11 +32,21 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     var selectedDuration: Int = 0
 
     var nowHistory = History()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        setup()
+    }
+    
+    func setup() {
         // hide duration picker first
+        containerActivity.isHidden = false
         containerDuration.isHidden = true
         
         setupScrollView()
@@ -124,9 +134,18 @@ class SetActivity: UIViewController, UIScrollViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let flipToStartVC = segue.description as? FlipToStartVC {
-            flipToStartVC.nowHistory = History(ambienceId: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).id, activityName: globalActivities.getItemAt(index: selectedActivityIndex), date: Date(), duration: selectedDuration, isComplete: false)
+        if (segue.identifier == "navToFlip") {
+            if let flipToStartVC = segue.destination as? FlipToStartVC {
+                flipToStartVC.nowHistory = History(ambienceId: globalAmbiences.getSelectedAmbienceIndexAt(index: selectedAmbienceIndex).id, activityName: globalActivities.getItemAt(index: selectedActivityIndex), date: Date(), duration: selectedDuration, isComplete: false)
+                flipToStartVC.hidesBottomBarWhenPushed = true
+            }
         }
+    }
+    
+    @IBAction func unwindToSetActivity(_ unwindSegue: UIStoryboardSegue) {
+//        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        setup()
     }
     
     @IBAction func onPressStart(_ sender: UIButton) {

@@ -28,9 +28,12 @@ class FlipToStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesBottomBarWhenPushed = true
+        
         initView()
-        print(nowHistory)
     }
+    
+    
     
     func startFocus(){
         timerStartAct()
@@ -155,6 +158,8 @@ class FlipToStartVC: UIViewController {
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindToSetActivity", sender: self)
         completeTask()
     }
+    
 }
