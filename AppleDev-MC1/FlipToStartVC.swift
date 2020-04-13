@@ -58,6 +58,10 @@ class FlipToStartVC: UIViewController {
     
     func initView() {
         activateProximity(true)
+        swipeInfoImg.isHidden = true
+        infoLbl[1].isHidden = true
+        infoLbl[2].isHidden = true
+        
         ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).imageName)
         timeRemaining = nowHistory.duration! * 60
         timeLeftLbl.text = "\(format(second: timeRemaining))"
@@ -100,6 +104,9 @@ class FlipToStartVC: UIViewController {
         infoLbl[0].text = "Turn your phone flipped down" //height 37
         infoLbl[1].text = "\(breakTime)s" //426
         infoLbl[2].text = "to continue the activity!" //430
+        
+        infoLbl[1].isHidden = false
+        infoLbl[2].isHidden = false
         
         infoLbl[0].frame.size.height = 37
         infoLbl[1].frame.origin.y = 426
@@ -206,6 +213,16 @@ class FlipToStartVC: UIViewController {
     
     @IBAction func cancelActivity(_ sender: UIButton) {
         showCancelConfirmation()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            if identifier == "unwindToSetActivity" {
+                if let dest = segue.destination as? SetActivity{
+                    dest.selectedDuration = nowHistory.duration!
+                }
+            }
+        }
     }
     
 }

@@ -19,6 +19,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
     @IBOutlet var startActivityButton: RoundButton!
     @IBOutlet var durationPicker: UIPickerView!
     
+    @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet var containerActivity: UIView!
     @IBOutlet var containerDuration: UIView!
     
@@ -49,7 +50,10 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         selectedActivityIndex = 0
         selectedAmbienceIndex = 0
         slides = []
-        selectedDuration = 0
+        
+        if selectedDuration == 0 {
+            selectedDuration = 1
+        }
         
         // hide duration picker first
         containerActivity.isHidden = false
@@ -67,6 +71,12 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         rectShapeCD.position = self.containerDuration.center
         rectShapeCD.path = UIBezierPath(roundedRect: self.containerDuration.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
         self.containerDuration.layer.mask = rectShapeCD
+        
+        let rectShapeFX = CAShapeLayer()
+        rectShapeFX.bounds = self.effectView.frame
+        rectShapeFX.position = self.effectView.center
+        rectShapeFX.path = UIBezierPath(roundedRect: self.effectView.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
+        self.effectView.layer.mask = rectShapeFX
                 
         activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         
@@ -120,6 +130,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         
         do {
             musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer?.numberOfLoops = -1
             musicPlayer?.play()
         } catch  {
             //Error
@@ -173,6 +184,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
     }
     
     @IBAction func onPressStart(_ sender: UIButton) {
+        musicPlayer?.stop()
         performSegue(withIdentifier: "navToFlip", sender: self)
     }
     
