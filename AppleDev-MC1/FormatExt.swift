@@ -38,3 +38,8 @@ extension Date {
     var localizedDescription: String { localizedDescription() }
     var shortDateTime: String  { localizedDescription(dateStyle: .short,  timeStyle: .short) }
 }
+
+extension Notification.Name {
+    static let didActivateProximity = Notification.Name("didActivateProximity")
+    static let didCompleteTask = Notification.Name("didCompleteTask")
+}

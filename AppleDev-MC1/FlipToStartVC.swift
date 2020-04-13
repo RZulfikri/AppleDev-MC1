@@ -10,58 +10,95 @@ import UIKit
 import CoreMotion
 
 class FlipToStartVC: UIViewController {
-    struct ambie {
-        var gambar : String
-        var musik : String
-    }
+    @IBOutlet var infoLbl: [UILabel]!
     @IBOutlet weak var timeLeftLbl: UILabel!
+    @IBOutlet weak var ambienceImg: UIImageView!
+    @IBOutlet weak var swipeInfoImg: UIImageView!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     var motion = CMMotionManager()
-    var timer = Timer()
-    var isFaceDown = false
-    var time = 0
+    var focusTimer = Timer()
+    var breakTimer = Timer()
+    var isStart = false
+    var breakTime = 10
     var timeRemaining = 100
+    var nowHistory = History()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activateProximity(true)
-//        myAccelerometer()
-//        timerStartAct()
-//        Do any additional setup after loading the view.
+        initView()
     }
     
     func startFocus(){
         timerStartAct()
     }
-
-//    show for debugg
-//    @objc func proximityChanged(notification: NSNotification) {
-//        if let device = notification.object as? UIDevice{
-//            print("proximity \(device.proximityState)")
-//        }
-//    }
-//    start and pause proximity monitor
-//    true for turn on
+    
+    func initView() {
+        activateProximity(true)
+        nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false)
+        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: 2).imageName)
+             //fill it by image name from segue struct
+        timeRemaining = 100 //fill it by duration from segue struct
+        timeLeftLbl.text = "\(format(second: timeRemaining))"
+    }
+    
+    func timerStartAct(){
+        breakTimer.invalidate()
+        breakTime = 10
+        focusTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showTime), userInfo: nil, repeats: true)
+    }
+    
+    func timerPauseAct(){
+        focusTimer.invalidate()
+        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeView), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showTime(){
+        if timeRemaining == 0 {
+            completeTask()
+        } else {
+            timeRemaining -= 1
+            timeLeftLbl.text = "\(format(second: timeRemaining))"
+        }
+    }
+    
+    @objc func changeView() {
+        if breakTime == 0 {
+            completeTask()
+        } else {
+            breakTime -= 1
+        }
+        infoLbl[0].text = "Turn your phone flipped down" //height 37
+        infoLbl[1].text = "\(breakTime)s" //426
+        infoLbl[2].text = "to continue the activity!" //430
+        cancelBtn.setTitle("Give Up", for: .normal)
+        cancelBtn.titleLabel?.text = "Give Up"
+        
+        infoLbl[0].frame.size.height = 37
+        infoLbl[1].frame.origin.y = 426
+        infoLbl[2].frame.origin.y = 430
+        
+        infoLbl[1].font = infoLbl[1].font.withSize(16)
+        infoLbl[1].textColor = UIColor.systemBlue
+        
+        swipeInfoImg.isHidden = true
+    }
+    
+    func completeTask(){
+        if timeRemaining == 0 {
+            print("complete")
+        } else {
+            print("not")
+        }
+    }
     
     func activateProximity(_ stats: Bool) {
         let device = UIDevice.current
         device.isProximityMonitoringEnabled = stats
         if device.isProximityMonitoringEnabled{
-            NotificationCenter.default.addObserver(self, selector: #selector(myAccelerometer), name: nil , object: device)
+            NotificationCenter.default.addObserver(self, selector: #selector(myAccelerometer), name: nil
+                , object: device)
         }
-    }
-    
-    func timerStartAct(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showTime), userInfo: nil, repeats: true)
-    }
-    
-    func timerPauseAct(){
-        timer.invalidate()
-    }
-    
-    @objc func showTime(){
-        timeRemaining -= 1
-        timeLeftLbl.text = "\(format(second: timeRemaining))"
     }
     
     @objc func myAccelerometer(notification: NSNotification) {
@@ -77,35 +114,22 @@ class FlipToStartVC: UIViewController {
                 self.view.reloadInputViews()
                 let z = trueData.acceleration.z
                 let isFaceDown = Double(z) > 0.9 ? true : false
-//                self.timeLeftLbl.text = stats
-                if (self.isFaceDown != isFaceDown){
-                    print(isFaceDown)
-                    if isCovered {
-                        if isFaceDown {
-                            self.startFocus()
-                        }
-                    } else {
+                let isStart = isFaceDown && isCovered ? true : false
+                if isStart{
+                    if self.isStart != isStart {
+                        self.startFocus()
+                    }
+                } else {
+                    if self.isStart != isStart {
                         self.timerPauseAct()
                     }
-                    self.isFaceDown = isFaceDown
                 }
+                self.isStart = isStart
             }
         }
     }
     
     @IBAction func cancelActivity(_ sender: UIButton) {
-        
-    }
-}
-
-func format(second: Int) -> String {
-    let m = second / 60
-    let s = second % 60
-    return "\(m.padZero()):\(s.padZero())"
-}
-
-private extension Int {
-    func padZero() -> String {
-        return String(format: "%02d", self)
+        completeTask()
     }
 }
