@@ -54,6 +54,20 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         // hide duration picker first
         containerActivity.isHidden = false
         containerDuration.isHidden = true
+        
+        // set corner
+        let rectShapeCA = CAShapeLayer()
+        rectShapeCA.bounds = self.containerActivity.frame
+        rectShapeCA.position = self.containerActivity.center
+        rectShapeCA.path = UIBezierPath(roundedRect: self.containerActivity.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
+        self.containerActivity.layer.mask = rectShapeCA
+        
+        let rectShapeCD = CAShapeLayer()
+        rectShapeCD.bounds = self.containerDuration.frame
+        rectShapeCD.position = self.containerDuration.center
+        rectShapeCD.path = UIBezierPath(roundedRect: self.containerDuration.bounds, byRoundingCorners: [.topRight , .topLeft], cornerRadii: CGSize(width: 50, height: 50)).cgPath
+        self.containerDuration.layer.mask = rectShapeCD
+                
         activityLabel.text = globalActivities.getItemAt(index: selectedActivityIndex)
         
         setupScrollView()
@@ -65,7 +79,7 @@ class SetActivity: UIViewController, UIScrollViewDelegate, UITabBarControllerDel
         scrollView.automaticallyAdjustsScrollIndicatorInsets = false
         scrollView.contentInsetAdjustmentBehavior = .never
         
-        
+        scrollView.scrollsToTop = true
         slides = createSlides()
         setupSlideScrollView(slides: slides)
         
