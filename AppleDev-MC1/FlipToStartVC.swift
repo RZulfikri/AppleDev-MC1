@@ -10,19 +10,45 @@ import UIKit
 import CoreMotion
 
 class FlipToStartVC: UIViewController {
-    
+    struct ambie {
+        var gambar : String
+        var musik : String
+    }
     @IBOutlet weak var timeLeftLbl: UILabel!
     
     var motion = CMMotionManager()
     var timer = Timer()
-    var stats = ""
-    var timeRemaining = 10
+    var isFaceDown = false
+    var time = 0
+    var timeRemaining = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myAccelerometer()
+        activateProximity(true)
+//        myAccelerometer()
+//        timerStartAct()
+//        Do any additional setup after loading the view.
+    }
+    
+    func startFocus(){
         timerStartAct()
-        // Do any additional setup after loading the view.
+    }
+
+//    show for debugg
+//    @objc func proximityChanged(notification: NSNotification) {
+//        if let device = notification.object as? UIDevice{
+//            print("proximity \(device.proximityState)")
+//        }
+//    }
+//    start and pause proximity monitor
+//    true for turn on
+    
+    func activateProximity(_ stats: Bool) {
+        let device = UIDevice.current
+        device.isProximityMonitoringEnabled = stats
+        if device.isProximityMonitoringEnabled{
+            NotificationCenter.default.addObserver(self, selector: #selector(myAccelerometer), name: nil , object: device)
+        }
     }
     
     func timerStartAct(){
@@ -35,21 +61,33 @@ class FlipToStartVC: UIViewController {
     
     @objc func showTime(){
         timeRemaining -= 1
-        timeLeftLbl.text = "\(timeRemaining)"
+        timeLeftLbl.text = "\(format(second: timeRemaining))"
     }
     
-    func myAccelerometer() {
+    @objc func myAccelerometer(notification: NSNotification) {
         motion.accelerometerUpdateInterval = 0.5
+        var isCovered = false
+        if let device = notification.object as? UIDevice{
+            isCovered = device.proximityState
+        }
         motion.startAccelerometerUpdates(to: OperationQueue.current!){(data, error) in
-            print(data as Any)
+//            cek x, y, z data
+//            print(data as Any)
             if let trueData = data {
                 self.view.reloadInputViews()
                 let z = trueData.acceleration.z
-                let stats = Double(z) > 0.9 ? "Kebawah" : "Keatas"
-                self.timeLeftLbl.text = stats
-                if (self.stats != stats){
-                    print(stats)
-                    self.stats = stats
+                let isFaceDown = Double(z) > 0.9 ? true : false
+//                self.timeLeftLbl.text = stats
+                if (self.isFaceDown != isFaceDown){
+                    print(isFaceDown)
+                    if isCovered {
+                        if isFaceDown {
+                            self.startFocus()
+                        }
+                    } else {
+                        self.timerPauseAct()
+                    }
+                    self.isFaceDown = isFaceDown
                 }
             }
         }
@@ -57,5 +95,17 @@ class FlipToStartVC: UIViewController {
     
     @IBAction func cancelActivity(_ sender: UIButton) {
         
+    }
+}
+
+func format(second: Int) -> String {
+    let m = second / 60
+    let s = second % 60
+    return "\(m.padZero()):\(s.padZero())"
+}
+
+private extension Int {
+    func padZero() -> String {
+        return String(format: "%02d", self)
     }
 }
