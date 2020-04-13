@@ -59,9 +59,9 @@ class AmbienceList {
 }
 
 let globalAmbiences = AmbienceList(arrAmbience: [
-    Ambience(id: 1, imageName: "Fire", audioName: "Campfire"),
-    Ambience(id: 2, imageName: "Cafe", audioName: "Cafe"),
-    Ambience(id: 3, imageName: "Forest", audioName: "Forest"),
-    Ambience(id: 4, imageName: "Cyberpunk", audioName: "Cyberpunk"),
-    Ambience(id: 5, imageName: "Bird", audioName: "Bird"),
+    Ambience(id: 0, imageName: "Fire", audioName: "Campfire"),
+    Ambience(id: 1, imageName: "Cafe", audioName: "Cafe"),
+    Ambience(id: 2, imageName: "Forest", audioName: "Forest"),
+    Ambience(id: 3, imageName: "Cyberpunk", audioName: "Cyberpunk"),
+    Ambience(id: 4, imageName: "Bird", audioName: "Bird"),
 ])
