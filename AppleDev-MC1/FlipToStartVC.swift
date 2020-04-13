@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class FlipToStartVC: UIViewController {
     @IBOutlet var infoLbl: [UILabel]!
@@ -23,6 +24,7 @@ class FlipToStartVC: UIViewController {
     var breakTime = 10
     var timeRemaining = 100
     var nowHistory = History()
+    var player = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,22 @@ class FlipToStartVC: UIViewController {
     
     func startFocus(){
         timerStartAct()
+        startSound()
+    }
+    
+    func pauseFocus(){
+        cancelBtn.setTitle("Give Up", for: .normal)
+        cancelBtn.titleLabel?.text = "Give Up"
+        timerPauseAct()
+        pauseSound()
+    }
+    
+    func startSound() {
+        player.play()
+    }
+    
+    func pauseSound() {
+        player.pause()
     }
     
     func initView() {
@@ -40,6 +58,14 @@ class FlipToStartVC: UIViewController {
              //fill it by image name from segue struct
         timeRemaining = 100 //fill it by duration from segue struct
         timeLeftLbl.text = "\(format(second: timeRemaining))"
+        
+        do {
+            let audioPath = Bundle.main.path(forResource: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).audioName, ofType: ".mp3")
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        } catch {
+            
+        }
+        player.prepareToPlay()
     }
     
     func timerStartAct(){
@@ -71,8 +97,6 @@ class FlipToStartVC: UIViewController {
         infoLbl[0].text = "Turn your phone flipped down" //height 37
         infoLbl[1].text = "\(breakTime)s" //426
         infoLbl[2].text = "to continue the activity!" //430
-        cancelBtn.setTitle("Give Up", for: .normal)
-        cancelBtn.titleLabel?.text = "Give Up"
         
         infoLbl[0].frame.size.height = 37
         infoLbl[1].frame.origin.y = 426
@@ -121,7 +145,7 @@ class FlipToStartVC: UIViewController {
                     }
                 } else {
                     if self.isStart != isStart {
-                        self.timerPauseAct()
+                        self.pauseFocus()
                     }
                 }
                 self.isStart = isStart
