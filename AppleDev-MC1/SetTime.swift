@@ -91,19 +91,19 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
     // Music Player
     func backgroundMusic(index: Int) {
         if index == 0 {
-            setupMusicPlayer(songTitle: "Campfire")
-            titleLbl.text = "Campfire"
+            setupMusicPlayer(songTitle: "Cyberpunk")
+            titleLbl.text = "Cyberpunk"
         } else if index == 1 {
-            setupMusicPlayer(songTitle: "Coffee Shop")
-            titleLbl.text = "Coffee Shop"
+            setupMusicPlayer(songTitle: "Cafe")
+            titleLbl.text = "Cafe"
         } else if index == 2 {
-            setupMusicPlayer(songTitle: "Ocean Waves")
-            titleLbl.text = "Ocean Waves"
+            setupMusicPlayer(songTitle: "Fireloop")
+            titleLbl.text = "Fire"
         } else if index == 3 {
-            setupMusicPlayer(songTitle: "Thuderstorm")
-            titleLbl.text = "Thunderstorm"
+            setupMusicPlayer(songTitle: "Bird")
+            titleLbl.text = "Bird"
         } else {
-            setupMusicPlayer(songTitle: "Forest 1")
+            setupMusicPlayer(songTitle: "Forest")
             titleLbl.text = "Forest"
         }
     }
@@ -111,19 +111,19 @@ class SetTime: UIViewController, UIScrollViewDelegate, UIPageViewControllerDeleg
     // Image Carousel Content
     func createSlides() -> [Slide] {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide1.imageView.image = UIImage(named: "toa-heftiba-DUXACn8tgp4-unsplash")
+        slide1.imageView.image = UIImage(named: "Cyberpunk")
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide2.imageView.image = UIImage(named: "kari-shea-2c80smWge9Y-unsplash")
+        slide2.imageView.image = UIImage(named: "Cafe")
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: "jason-leung-andxLi4Kv8w-unsplash")
+        slide3.imageView.image = UIImage(named: "Fire")
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide4.imageView.image = UIImage(named: "haik-ourfal-M4biGF0pN5s-unsplash")
+        slide4.imageView.image = UIImage(named: "Bird")
         
         let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide5.imageView.image = UIImage(named: "deglee-degi-wQImoykAwGs-unsplash")
+        slide5.imageView.image = UIImage(named: "Forest")
         
         return [slide1, slide2, slide3, slide4, slide5]
     }
