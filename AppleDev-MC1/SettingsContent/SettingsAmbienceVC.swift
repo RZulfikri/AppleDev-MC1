@@ -75,13 +75,33 @@ class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollecti
         return CGSize(width: cellWidth, height: cellWidth * 1.75)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (globalAmbiences.getAmbienceAt(index: indexPath.row).selected) {
-            globalAmbiences.unselectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
-        } else {
-            globalAmbiences.selectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+    func showAlert() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Alert!!", message: "You must select at least one ambience", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Ok", style: .default) { (_) in
         }
-        self.collectionView.reloadData()
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if globalAmbiences.getSelectedAmbiences().count <= 1 {
+            showAlert()
+        } else {
+            if (globalAmbiences.getAmbienceAt(index: indexPath.row).selected) {
+               globalAmbiences.unselectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+           } else {
+               globalAmbiences.selectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+           }
+           self.collectionView.reloadData()
+        }
     }
     
 
