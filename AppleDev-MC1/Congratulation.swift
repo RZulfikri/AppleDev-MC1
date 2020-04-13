@@ -14,7 +14,7 @@ class Congratulation: UIViewController {
     @IBOutlet weak var BackToFocusButton: RoundButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+
 //        CongratsLabel.text = "You have successfully completed your activity of Working for \(minutes) minutes!"
     }
     
@@ -28,5 +28,8 @@ class Congratulation: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func onPressBackToMain(_ sender: UIButton) {
+ self.performSegue(withIdentifier: "unwindToSetActivity", sender: self)
+    }
+    
 }

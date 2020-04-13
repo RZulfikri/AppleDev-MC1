@@ -46,17 +46,22 @@ class AmbienceList {
     func getAmbienceAt(index: Int) -> Ambience {
         return self.arrAmbience[index]
     }
+    
+    func getSelectedAmbiences() -> [Ambience] {
+        return self.arrAmbience.filter({ ambience in
+            return ambience.selected
+        })
+    }
+    
+    func getSelectedAmbienceIndexAt(index: Int) -> Ambience {
+        return getSelectedAmbiences()[index]
+    }
 }
 
 let globalAmbiences = AmbienceList(arrAmbience: [
-    Ambience(id: 1, imageName: "Fire", audioName: "Fireloop"),
+    Ambience(id: 1, imageName: "Fire", audioName: "Campfire"),
     Ambience(id: 2, imageName: "Cafe", audioName: "Cafe"),
     Ambience(id: 3, imageName: "Forest", audioName: "Forest"),
     Ambience(id: 4, imageName: "Cyberpunk", audioName: "Cyberpunk"),
     Ambience(id: 5, imageName: "Bird", audioName: "Bird"),
-//    Ambience(id: 6, imageName: "ambience-6"),
-//    Ambience(id: 7, imageName: "ambience-7"),
-//    Ambience(id: 8, imageName: "ambience-8"),
-//    Ambience(id: 9, imageName: "ambience-9"),
-//    Ambience(id: <#T##Int#>, imageName: <#T##String#>, audioName: <#T##String?#>, selected: <#T##Bool#>)
-    ])
+])

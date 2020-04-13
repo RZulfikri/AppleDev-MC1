@@ -12,8 +12,6 @@ class HistoryTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let historyDummy = History(ambienceId: 1, activityName: "Nyoba", date: Date(), duration: 200, isComplete: true)
-        globalHistory.addHistory(history: historyDummy)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

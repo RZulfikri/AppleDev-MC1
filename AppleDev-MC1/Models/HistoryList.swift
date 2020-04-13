@@ -20,6 +20,10 @@ class HistoryList {
     func addHistory(history: History) {
         self.arrHistory.append(history)
     }
+    
+    func getList() -> [History]{
+        return self.arrHistory
+    }
 }
 
 let globalHistory = HistoryList(arrHistory: [])
