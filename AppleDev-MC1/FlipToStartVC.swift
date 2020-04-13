@@ -40,23 +40,24 @@ class FlipToStartVC: UIViewController {
         cancelBtn.setTitle("Give Up", for: .normal)
         cancelBtn.titleLabel?.text = "Give Up"
         timerPauseAct()
-        pauseSound()
+//        pauseSound()
     }
     
     func startSound() {
         player.play()
+        player.numberOfLoops = -1
     }
     
-    func pauseSound() {
-        player.pause()
-    }
+//    func pauseSound() {
+//        player.pause()
+//    }
     
     func initView() {
         activateProximity(true)
-        nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false)
-        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: 2).imageName)
+        nowHistory = History(ambienceId: 2, activityName: "entah apa", date: Date(), duration: 100, isComplete: false) // ex (it should be from segue)
+        ambienceImg.image = UIImage(imageLiteralResourceName: globalAmbiences.getAmbienceAt(index: nowHistory.ambienceId!).imageName)
              //fill it by image name from segue struct
-        timeRemaining = 100 //fill it by duration from segue struct
+        timeRemaining = nowHistory.duration! //fill it by duration from segue struct
         timeLeftLbl.text = "\(format(second: timeRemaining))"
         
         do {
@@ -108,12 +109,20 @@ class FlipToStartVC: UIViewController {
         swipeInfoImg.isHidden = true
     }
     
+    func stopFocus(){
+        player.stop()
+        focusTimer.invalidate()
+        breakTimer.invalidate()
+        activateProximity(false)
+    }
+    
     func completeTask(){
         if timeRemaining == 0 {
-            print("complete")
-        } else {
-            print("not")
+            nowHistory.isComplete = true
         }
+        stopFocus()
+        globalHistory.addHistory(history: nowHistory)
+        performSegue(withIdentifier: "toMain", sender: self)
     }
     
     func activateProximity(_ stats: Bool) {

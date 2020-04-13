@@ -12,7 +12,8 @@ class HistoryTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let historyDummy = History(ambienceId: 1, activityName: "Nyoba", date: Date(), duration: 200, isComplete: true)
+        globalHistory.addHistory(history: historyDummy)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +25,25 @@ class HistoryTVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return globalHistory.arrHistory.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellHistory", for: indexPath)
+        let isComlpeted = globalHistory.arrHistory[indexPath.row].isComplete ? "Completed" : "Not Completed"
+        let title = "\(globalHistory.arrHistory[indexPath.row].activityName!) \(globalHistory.arrHistory[indexPath.row].duration! / 60) minutes"
+        let subTitle = "\(globalHistory.arrHistory[indexPath.row].date!.shortDateTime) \(isComlpeted)"
+        cell.textLabel?.text = title
+        cell.detailTextLabel?.text = subTitle
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
