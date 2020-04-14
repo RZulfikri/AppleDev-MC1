@@ -40,7 +40,7 @@ class HistoryTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellHistory", for: indexPath)
         let isComlpeted = globalHistory.arrHistory[indexPath.row].isComplete ? "Completed" : "Not Completed"
-        let title = "\(globalHistory.arrHistory[indexPath.row].activityName!) \(globalHistory.arrHistory[indexPath.row].duration! / 60) minutes"
+        let title = "\(globalHistory.arrHistory[indexPath.row].activityName!) \(globalHistory.arrHistory[indexPath.row].duration!) minutes"
         let subTitle = "\(globalHistory.arrHistory[indexPath.row].date!.shortDateTime) \(isComlpeted)"
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = subTitle
