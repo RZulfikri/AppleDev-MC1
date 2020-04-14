@@ -74,8 +74,6 @@ class NewOnboardViewController: UIViewController {
             performSegue(withIdentifier: "navToMain", sender: self)
         }
       
-        
-        
     }
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
@@ -84,7 +82,7 @@ class NewOnboardViewController: UIViewController {
     
     fileprivate func setUpLoad() {
         view.backgroundColor = .white
-//        skipButton.isHidden = true
+
         prevButton.setTitle("", for: .normal)
         displayData()
     }

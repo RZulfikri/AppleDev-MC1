@@ -490,11 +490,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onBoard_02" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-dP-4By">
                                 <rect key="frame" x="0.0" y="248" width="414" height="302"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="7HV-5S-VE0">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="7HV-5S-VE0">
                                 <rect key="frame" x="20" y="825" width="375" height="37"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yv-26-buw">
-                                        <rect key="frame" x="0.0" y="0.0" width="41" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="sVY-dy-CVd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="PREV"/>
                                         <connections>
@@ -502,12 +505,15 @@
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kmT-pm-TeM">
-                                        <rect key="frame" x="167" y="0.0" width="41" height="37"/>
+                                        <rect key="frame" x="181" y="0.0" width="13" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDx-83-TCe">
-                                        <rect key="frame" x="334" y="0.0" width="41" height="37"/>
+                                        <rect key="frame" x="320" y="0.0" width="55" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="UDH-MB-TcU"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="NEXT"/>
                                         <connections>
