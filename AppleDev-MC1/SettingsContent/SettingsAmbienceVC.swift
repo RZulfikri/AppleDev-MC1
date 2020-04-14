@@ -92,16 +92,16 @@ class SettingsAmbienceVC: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if globalAmbiences.getSelectedAmbiences().count <= 1 {
-            showAlert()
-        } else {
-            if (globalAmbiences.getAmbienceAt(index: indexPath.row).selected) {
-               globalAmbiences.unselectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
-           } else {
-               globalAmbiences.selectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
-           }
-           self.collectionView.reloadData()
-        }
+        if (globalAmbiences.getAmbienceAt(index: indexPath.row).selected) {
+            if globalAmbiences.getSelectedAmbiences().count <= 1 {
+                  showAlert()
+            } else {
+                globalAmbiences.unselectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+            }
+       } else {
+           globalAmbiences.selectAmbience(ambience: globalAmbiences.getAmbienceAt(index: indexPath.row))
+       }
+       self.collectionView.reloadData()
     }
     
 
