@@ -12,6 +12,11 @@ class HistoryTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let history = History(ambienceId: 2, activityName: "Working", date: Date(), duration: 20, isComplete: true)
+        let history2 = History(ambienceId: 2, activityName: "Working", date: Date(), duration: 30, isComplete: false)
+        
+        globalHistory.addHistory(history: history)
+        globalHistory.addHistory(history: history2)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
