@@ -126,14 +126,14 @@ class FlipToStartVC: UIViewController {
     }
     
     func completeTask(){
+        stopFocus()
+        globalHistory.addHistory(history: nowHistory)
         if timeRemaining == 0 {
             nowHistory.isComplete = true
             performSegue(withIdentifier: "navToCongrat", sender: self)
         } else {
             showFailureConfirmation()
         }
-        stopFocus()
-        globalHistory.addHistory(history: nowHistory)        
     }
     
     func activateProximity(_ stats: Bool) {
