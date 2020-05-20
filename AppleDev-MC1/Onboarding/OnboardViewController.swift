@@ -137,8 +137,4 @@ class OnboardViewController: UIViewController {
         ])
         
     }
-    
-
-    
-
 }
